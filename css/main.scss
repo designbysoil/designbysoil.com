@@ -3,6 +3,8 @@
 ---
 // import sass files
 @import "colors.scss";
+@import "variables.scss";
+@import "mixins.scss";
 
 body {
   font: 16px/26px -apple-system, Helvetica, Helvetica Neue, Arial;
@@ -24,14 +26,28 @@ a {
 .site-wrapper {
   position: relative;
   display: flex;
-  padding: 2em 4em;
-  align-items: center;
-  height: 90vh;
   color: $black;
   font-size: 1em;
   line-height: 1.4;
 }
 
-.content {
-	max-width: 50%;
+@media (min-width: 1px) and (max-width: #{$width-tablet}) {
+  .site-wrapper {
+    padding: 1em 2em;
+    align-items: center;
+    height: 90vh;
+  }
+}
+
+@include responsive('min-width: #{$width-tablet}') {
+  .site-wrapper {
+    padding: 2em 4em;
+    align-items: center;
+    height: 90vh;
+  }
+
+  .content {
+    max-width: 50%;
+  }
+
 }

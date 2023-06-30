@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+{% include head.html %}
+
+<body class="site {{ page.class }}">
+    <a id="top"></a>
+    <div class="page-wrapper">
+        {% include header.html %}
+        <section>
+            {{ content }}
+        </section>
+    </div>
+    {% include js.html %}
+</body>
+
+</html>

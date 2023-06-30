@@ -3,11 +3,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="stylesheet" href="/css/normalize.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <title>{% if page.title %}{{ page.title }}{% endif %}</title>
+  {% include seo_customizations.html %}
+  {% seo %}
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"> 
+  <link rel="stylesheet" type="text/css" href="/css/master.css">
+  <link rel="stylesheet" type="text/css" href="/css/slick.css"/>
   
+
+
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl }}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
 </head>

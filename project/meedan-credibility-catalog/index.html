@@ -4,6 +4,7 @@ layout: page
 project: credcat
 ---
 {% assign project = site.data.projects[page.project] %}
+{% assign case_slides = project.case %}
 {% assign documentation_slides = project.documentation %}
 {% assign wireframes_slides = project.wireframes %}
 {% include project-hero-image.html image_url = project.hero %}
@@ -11,7 +12,7 @@ project: credcat
 {% include project-meta.html client = project.client toolkit = project.toolkit %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/4FRngDneEoEYjoFH7uoj7N/e643eaf0a93ab41b938d8a5d7c32b49a/sample-full-bleed.jpg" %}
 {% include text-block.html heading = "Solution" text = "We hosted a series of workshops in close collaboration with Manon and Joes where we defined the strategic direction for the business. This helped us to define a clear proposition and supporting values to clarify Sociaal Centraal's role within the industry - as well as its positioning within the growing field of social design." %}
-{% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/4k7xRIZpVZPsd9sJzn3kH3/7d9d275e921bc1f693434be9720e35e8/credcat-projects.jpg" %}
+{% include block-image-slideshow.html slides = case_slides %}
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6YzquBOLm1AxgHkEqjyeE6/183ec745695a2e133fa1b43248ebfdad/Filter_Dropdown__Areas_of_focus.png" background = "#4C4CFF" credit = "Photo: Steven Snow for CredCon" %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/QeBVMn2r2oZyVTYN6rXU7/ffb40d5eca24e3f4200bb21e622cafbe/cerdcat-projects-comparison-view.jpg" %}
 {% include block-image-carousel.html slides = documentation_slides %}

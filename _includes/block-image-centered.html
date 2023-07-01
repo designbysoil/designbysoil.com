@@ -1,0 +1,11 @@
+<section class="section">
+  <div class="block-image dark">
+    <div class="block-image-inner">
+      <img
+        src="{{ include.image_url }}"
+        sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1403px) 78vw, 1095px"
+        srcset="{{ include.image_url }}?fl=progressive&q=90&w=500 500w, {{ include.image_url }}?fl=progressive&q=90&w=800 800w, {{ include.image_url }}?fl=progressive&q=90&w=1080 1080w, {{ include.image_url }} 1095w"
+        alt="">
+    </div>
+  </div>
+</section>

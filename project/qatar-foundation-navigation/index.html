@@ -76,47 +76,9 @@ layout: page
     </div>
   </div>
 </section>
-<section class="section">
-  <div class="block-image dark">
-    <div class="block-image-inner">
-      <img
-        src="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/64992a4861bff6f60fcaf8d0_Education%20G1%20L1%20P1.jpg"
-        sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1403px) 78vw, 1095px"
-        srcset="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/64992a4861bff6f60fcaf8d0_Education%20G1%20L1%20P1-p-500.jpg 500w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/64992a4861bff6f60fcaf8d0_Education%20G1%20L1%20P1-p-800.jpg 800w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/64992a4861bff6f60fcaf8d0_Education%20G1%20L1%20P1-p-1080.jpg 1080w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/64992a4861bff6f60fcaf8d0_Education%20G1%20L1%20P1.jpg 1095w"
-        alt="">
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="dark">
-    <div class="block-image-inner">
-
-      <div class="slideshow">
-        <div
-          aria-label="1 of 2"
-          role="group"
-          class="slide__item">
-          <img
-            src="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd42ccb671b2e16acacae_Research%20G1%20L1%20P1.jpg"
-            sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1397px) 78vw, 1090px"
-            srcset="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd42ccb671b2e16acacae_Research%20G1%20L1%20P1-p-500.jpg 500w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd42ccb671b2e16acacae_Research%20G1%20L1%20P1-p-800.jpg 800w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd42ccb671b2e16acacae_Research%20G1%20L1%20P1-p-1080.jpg 1080w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd42ccb671b2e16acacae_Research%20G1%20L1%20P1.jpg 1090w"
-            alt="">
-        </div>
-        <div
-          aria-label="1 of 2"
-          role="group"
-          class="slide__item">
-          <img
-            src="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd46643fe66e953d2df01_Research%20G1%20expanded.jpg"
-            alt=""
-            sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1397px) 78vw, 1090px"
-            srcset="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd46643fe66e953d2df01_Research%20G1%20expanded-p-500.jpg 500w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd46643fe66e953d2df01_Research%20G1%20expanded-p-800.jpg 800w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd46643fe66e953d2df01_Research%20G1%20expanded-p-1080.jpg 1080w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/649dd46643fe66e953d2df01_Research%20G1%20expanded.jpg 1090w">
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+{% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/7yzGWioK4vOvHuzm8Hm4I8/0bcb7aa3d4fbeb973934c40ab58dbfd9/Education_G1_L1_P1.jpg" %}
+{% assign research_slides = site.data.qf.research %}
+{% include block-image-slideshow.html slides = research_slides %}
 <section class="section">
   <div class="quote">"We are very happy with the whole process in which we dived deep into our own story and activities. fffunction converted all our input into a great name and design language."</div>
   <div class="by">Manon Barendse - Co-founder of Studio Sociaal Centraal</div>

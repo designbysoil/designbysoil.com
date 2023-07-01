@@ -1,0 +1,19 @@
+<section class="section">
+  <div class="block-image">
+    <div class="block-image-inner">
+      <div class="slider1">
+        <div class="splide">
+          <div class="splide__track">
+            <div class="splide__list">
+                {% for slide in include.slides %}
+                    <div aria-label="{{ forloop.index }} of {{ forloop.length }} role="group" class="splide__slide">
+                        <img sizes="(max-width: 479px) 100vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 82vw" srcset="{{ slide.image }}?fl=progressive&q=90&w=500 500w, {{ slide.image }}?fl=progressive&q=90&w=800 800w, {{ slide.image }}?fl=progressive&q=90&w=1080 1080w, {{ slide.image }}?fl=progressive&q=90&w=1600 1600w, {{ slide.image }}?fl=progressive&q=90&w=2000 2000w, {{ slide.image }}?fl=progressive&q=90&w=2600 2600w, {{ slide.image }}?fl=progressive&q=90&w=3200 3200w, {{ slide.image }}?fl=progressive&q=90&w=3840 3840w" src="{{ slide.image }}?fl=progressive" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

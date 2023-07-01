@@ -2,6 +2,9 @@
 qf:
   title: "Qatar Foundation –– Navigation redesign"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  page: "/project/qatar-foundation-navigation-redesign"
+  client: "Qatar Foundation"
+  toolkit: "UX, UI"
   documentation:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/4OD7IfWs8vQb4oOeVmyLH6/f22fc60d92095a55ae4c11924a6ef233/QF_Navigation_Redesign_____Research_3.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/57f2xHqpP5uc6yMATZZxMQ/6dae6fc89d9e34927009670773e2c1a6/QF_Navigation_Redesign_____Research_4.jpg"
@@ -16,6 +19,9 @@ qf:
 healthdesk:
   title: "Meedan –– Health Desk"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  page: "/project/health-desk"
+  client: "Meedan"
+  toolkit: "UX, UI"
   documentation:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/4OD7IfWs8vQb4oOeVmyLH6/f22fc60d92095a55ae4c11924a6ef233/QF_Navigation_Redesign_____Research_3.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/57f2xHqpP5uc6yMATZZxMQ/6dae6fc89d9e34927009670773e2c1a6/QF_Navigation_Redesign_____Research_4.jpg"

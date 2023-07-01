@@ -7,9 +7,9 @@ project: qf
 {% assign documentation_slides = project.documentation %}
 {% assign research_slides = project.research %}
 {% assign case_slides = project.case %}
-{% include project-hero-image.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png" %}
+{% include project-hero-image.html image_url = project.hero %}
 {% include text-block.html heading = "Challenge" text = "Studio Sociaal Centraal is a unique and human-centered social design studio from the Netherlands. They service a wide range of organisations across the country. After three successful years of building a portfolio and growing the industry as a whole, they needed a brand that would represent their progression and position them as a trusted partner for future clients." %}
-{% include project-meta.html client = "Qatar Foundation" toolkit = "UX, UI" %}
+{% include project-meta.html client = project.client toolkit = project.toolkit %}
 <section class="section">
   <div class="block-image dark">
     <div class="block-image-inner padding-bottom--0">

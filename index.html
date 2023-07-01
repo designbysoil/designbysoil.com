@@ -2,3 +2,11 @@
 title: Designbysoil – Work of Abdul Rehman Khawar
 layout: page
 ---
+{% assign projects = site.data.projects %}
+<section class="section">
+    <div class="project-list">
+        {% for project in projects %}
+            <div class="item"><a href="{{ project[1]['page'] }}">{{ project[1]['title'] }}</a></div>
+        {% endfor %}
+    </div>
+</section>

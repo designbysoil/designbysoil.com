@@ -120,6 +120,16 @@ a {
     overflow: hidden;
 }
 
+.project-list {
+    display: flex;
+    flex-direction: column;
+    .item a {
+        display: block;
+        margin-top: 20px;
+        padding: 10px;
+    }
+}
+
 .block-image {
     justify-content: center;
     align-items: stretch;

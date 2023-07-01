@@ -1,8 +1,10 @@
 ---
-title: Designbysoil – Work of Abdul Rehman Khawar
+title: Meedan – Health Desk
 layout: page
+project: healthdesk
 ---
-{% include project-hero-image.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png" %}
+{% assign project = site.data.projects[page.project] %}
+{% include project-hero-image.html image_url = project.hero %}
 {% include text-block.html heading = "Challenge" text = "Studio Sociaal Centraal is a unique and human-centered social design studio from the Netherlands. They service a wide range of organisations across the country. After three successful years of building a portfolio and growing the industry as a whole, they needed a brand that would represent their progression and position them as a trusted partner for future clients." %}
 {% include project-meta.html client = "Qatar Foundation" toolkit = "UX, UI" %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/7fngA0qvM0przWqmzYt5Ni/fb92930021408bf918fe3b90dfdf096a/Health_Desk_-_Documentation_-_7.jpg" %}

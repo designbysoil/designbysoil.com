@@ -1,16 +1,13 @@
 ---
-title: Designbysoil – Work of Abdul Rehman Khawar
+title: Qatar Foundation – Navigation redesign
 layout: page
+project: qf
 ---
-<section class="section">
-  <h1 class="heading center">Qatar Foundation –– Navigation redesign</h1>
-  <img
-    src="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/6498a7f963e42531f957e6ef_project-hero.png"
-    sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 91vw"
-    srcset="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/6498a7f963e42531f957e6ef_project-hero-p-500.png 500w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/6498a7f963e42531f957e6ef_project-hero-p-800.png 800w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/6498a7f963e42531f957e6ef_project-hero-p-1080.png 1080w, https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/6498a7f963e42531f957e6ef_project-hero.png 1318w"
-    alt=""
-    class="project-hero margin-top-60">
-</section>
+{% assign project = site.data.projects[page.project] %}
+{% assign documentation_slides = project.documentation %}
+{% assign research_slides = project.research %}
+{% assign case_slides = project.case %}
+{% include project-hero-image.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png" %}
 {% include text-block.html heading = "Challenge" text = "Studio Sociaal Centraal is a unique and human-centered social design studio from the Netherlands. They service a wide range of organisations across the country. After three successful years of building a portfolio and growing the industry as a whole, they needed a brand that would represent their progression and position them as a trusted partner for future clients." %}
 {% include project-meta.html client = "Qatar Foundation" toolkit = "UX, UI" %}
 <section class="section">
@@ -24,16 +21,15 @@ layout: page
   </div>
 </section>
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6hxZT6bz5hrQ3peOjlft06/463ee87b994d02811eb4f97f1f9d9d0d/qf.org.qa_navigation_education_mobile.png" %}
-{% assign documentation_slides = site.data.qf.documentation %}
 {% include block-image-carousel.html slides = documentation_slides %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/7yzGWioK4vOvHuzm8Hm4I8/0bcb7aa3d4fbeb973934c40ab58dbfd9/Education_G1_L1_P1.jpg" %}
-{% assign research_slides = site.data.qf.research %}
+
 {% include block-image-slideshow.html slides = research_slides %}
 <section class="section">
   <div class="quote">"We are very happy with the whole process in which we dived deep into our own story and activities. fffunction converted all our input into a great name and design language."</div>
   <div class="by">Manon Barendse - Co-founder of Studio Sociaal Centraal</div>
 </section>
-{% assign case_slides = site.data.qf.case %}
 {% include block-image-carousel.html slides = case_slides %}
+
 <section class="section"></section>
 <section class="section"></section>

@@ -33,3 +33,20 @@ healthdesk:
   research:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/6CGbJJ43hpn6Dwyfd2Jhs5/79aba23737f03102b1e0f991b9db0d8f/Research_G1_L1_P1.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/3sQS9HwkyZX921F0Sh2xFU/260e01903ae853e3ae6e3aeccd5456c4/Research_G1_expanded.jpg"
+credcat:
+  title: "Meedan –– Credibility Catalog"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  page: "/project/meedan-credibility-catalog"
+  client: "Meedan"
+  toolkit: "UX, UI"
+  documentation:
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/PIVc7FAuJTYOtwSj6VDVl/0407f4b6fabd8dceb68c7d3ac0f50094/Credibility_Catalog_-_Documentation_-_1.jpg"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/1Ua4dPgxMLqkkvHlbk4vhf/1589cda6172db93fad6841802bca990b/Credibility_Catalog_-_Documentation_-_2.jpg"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/64UNppgUWih7ezGNTI9K12/99048b1b789acc6f22a1727c82ed68da/Credibility_Catalog_-_Documentation_-_3.png"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/5Nw5EnUeH8Wd2CWTIRyh5s/f7a82501c6a04350cf761f0cf244e752/Credibility_Catalog_-_Documentation_-_4.jpg"
+  wireframes:
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/51y0G0phLTSXUKcj741EOB/6b66bcf1478266dee1f632a0a67c97f4/Credibility_Catalog_-_Wireframes_-_1.jpg"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/5Angxd2aDtwjD6NrobWboq/156b6b6ca98e4c3b74318a2566714e7b/Credibility_Catalog_-_Wireframes_-_2.jpg"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/6a8kArxJiA2jlE9EO7z8oZ/0eb63892614aa74e3e5ebec2d9b55264/Credibility_Catalog_-_Wireframes_-_3.jpg"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/7Mb0VayTXBCBcFIWgekHrn/8ecc8918d76edc9b1543f234a29f37c1/Credibility_Catalog_-_Wireframes_-_4.jpg"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/XX1yVNqYphO0RGmQhci8s/f0c16a768653e5293c4c818cde3b46ab/Credibility_Catalog_-_Wireframes_-_5.jpg"

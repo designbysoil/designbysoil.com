@@ -1,6 +1,6 @@
 <section class="section">
   <div class="dark">
-    <div class="block-image-inner">
+    <div class="block-image-inner{% if include.align == 'bottom' %} padding-bottom--0{% endif %}">
       <div class="slideshow">
         {% for slide in include.slides %}
             <div aria-label="{{ forloop.index }} of {{ forloop.length }}" role="group" class="slide__item">
@@ -8,7 +8,8 @@
                 src="{{ slide.image }}"
                 sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1397px) 78vw, 1090px"
                 srcset="{{ slide.image }}?fl=progressive&q=90&w=500 500w, {{ slide.image }}?fl=progressive&q=90&w=800 800w, {{ slide.image }}?fl=progressive&q=90&w=1080 1080w, {{ slide.image }} 1090w"
-                alt="">
+                alt=""
+                class="{{ include.image_class }}">
             </div>
         {% endfor %}
       </div>

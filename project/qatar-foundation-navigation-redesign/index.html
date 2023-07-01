@@ -10,25 +10,13 @@ project: qf
 {% include project-hero-image.html image_url = project.hero %}
 {% include text-block.html heading = "Challenge" text = "Studio Sociaal Centraal is a unique and human-centered social design studio from the Netherlands. They service a wide range of organisations across the country. After three successful years of building a portfolio and growing the industry as a whole, they needed a brand that would represent their progression and position them as a trusted partner for future clients." %}
 {% include project-meta.html client = project.client toolkit = project.toolkit %}
-<section class="section">
-  <div class="block-image dark">
-    <div class="block-image-inner padding-bottom--0">
-      <img
-        src="https://uploads-ssl.webflow.com/613fa4f7f2d4457d069d2e91/6498bb5e3a344d8f4a9830e5_Landing%20page%20G1%20no%20background%201.jpg"
-        alt=""
-        class="border-radius--8-8-0-0">
-    </div>
-  </div>
-</section>
+{% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/4nFf8YRrSwCiSQynuda04R/bfcac58dcd79cd9dec8c8e9f484967ab/Landing_page_G1_no_background_1.jpg" align = "bottom" image_class = "border-radius--8-8-0-0" %}
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6hxZT6bz5hrQ3peOjlft06/463ee87b994d02811eb4f97f1f9d9d0d/qf.org.qa_navigation_education_mobile.png" %}
 {% include block-image-carousel.html slides = documentation_slides %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/7yzGWioK4vOvHuzm8Hm4I8/0bcb7aa3d4fbeb973934c40ab58dbfd9/Education_G1_L1_P1.jpg" %}
 
 {% include block-image-slideshow.html slides = research_slides %}
-<section class="section">
-  <div class="quote">"We are very happy with the whole process in which we dived deep into our own story and activities. fffunction converted all our input into a great name and design language."</div>
-  <div class="by">Manon Barendse - Co-founder of Studio Sociaal Centraal</div>
-</section>
+{% include block-quote.html quote = '"We are very happy with the whole process in which we dived deep into our own story and activities. fffunction converted all our input into a great name and design language."' by = "Manon Barendse - Co-founder of Studio Sociaal Centraal" %}
 {% include block-image-carousel.html slides = case_slides %}
 
 <section class="section"></section>

@@ -123,11 +123,11 @@ a {
 .project-list {
     display: flex;
     flex-direction: column;
-    .item a {
-        display: block;
-        margin-top: 20px;
-        padding: 10px;
-    }
+}
+
+.project-list .item a {
+    display: flex;
+    padding: 20px 0;
 }
 
 .block-image {
@@ -217,6 +217,12 @@ a {
 .by {
     color: #f2f1d6;
     margin-top: 10px;
+}
+
+.credit {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #B7B7B7;
 }
 
 

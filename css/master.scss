@@ -162,7 +162,7 @@ a {
 
 .project-list .item a {
     position: relative;
-    display: flex;
+    display: inline-block;
     padding: 20px 0;
     &:hover .media {
         opacity: 1;
@@ -181,6 +181,7 @@ a {
     transform: translate(120%, -50%);
     z-index: -2;
     object-fit: cover;
+    pointer-events: none;
     img {
         border-radius: 8px;
     }

@@ -77,9 +77,9 @@ h1 {
     color: #f2f1d6;
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 45px;
+    font-size: 42px;
     font-weight: 400;
-    line-height: 55px;
+    line-height: 52px;
 }
 
 h2 {
@@ -122,14 +122,15 @@ a {
 .homepage-hero {
     h1 {
         grid-row: 1;
-        grid-column: 1 / 8;
+        grid-column: 1 / 7;
         align-self: flex-end;
         padding-bottom: 60px;
     }
     .homepage-hero-image {
         grid-row: 1;
-        grid-column: 6 / -1;
+        grid-column: 7 / -1;
         z-index: -1;
+        align-self: flex-start;
     }
 }
 

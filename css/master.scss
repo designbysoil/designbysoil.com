@@ -365,8 +365,13 @@ a {
         margin-bottom: 10px;
     }
 
-    .project-list .media {
-        transform: translate(50%, -50%);
+    .project-list a {
+        overflow: hidden;
+    }
+
+    .project-list a .media {
+        max-width: 300px;
+        transform: translate(60%, -50%);
     }
 
 }
@@ -406,6 +411,14 @@ a {
         margin-top: 10px;
     }
 
+    .project-list a {
+        overflow: hidden;
+    }
+
+    .project-list a .media {
+        max-width: 300px;
+    }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -429,6 +442,15 @@ a {
         grid-row-gap: 10px;
         flex-flow: wrap;
         margin-top: 10px;
+    }
+
+    .project-list a {
+        overflow: hidden;
+    }
+
+    .project-list a .media {
+        max-width: 200px;
+        // transform: translate(50%, -50%);
     }
 
 }

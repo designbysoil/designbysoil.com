@@ -166,6 +166,7 @@ a {
     &:hover .media {
         opacity: 1;
         transition: ease .2s;
+        pointer-events: none;
     }
 }
 
@@ -183,6 +184,7 @@ a {
     pointer-events: none;
     img {
         border-radius: 8px;
+        pointer-events: none;
     }
 }
 

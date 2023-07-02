@@ -66,7 +66,7 @@ h6 {
 
 body {
     color: #ecf0f3;
-    background-color: #262626;
+    background-color: #161616;
     font-family: Nunito Sans, sans-serif;
     font-size: 30px;
     font-weight: 400;
@@ -203,7 +203,7 @@ a {
     padding: 100px 60px;
 }
 
-.border-radius--8-8-0-0 {
+.rounded-top {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     overflow: hidden;
@@ -348,6 +348,19 @@ a {
 
     .page-wrapper {
         overflow: hidden;
+    }
+    
+    .rounded-top {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+
+    .block-image {
+        display: block;
+    }
+
+    .block-image .block-image-inner img {
+        width: 100%;
     }
 
     .block-image-inner {

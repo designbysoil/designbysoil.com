@@ -161,7 +161,7 @@ a {
 }
 
 .project-list a {
-    display: flex;
+    display: block;
     padding: 20px 0;
     &:hover .media {
         opacity: 1;
@@ -363,6 +363,10 @@ a {
 
     .project-meta {
         margin-bottom: 10px;
+    }
+
+    .project-list .media {
+        transform: translate(50%, -50%);
     }
 
 }

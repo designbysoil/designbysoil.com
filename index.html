@@ -2,9 +2,16 @@
 title: Designbysoil – Work of Abdul Rehman Khawar
 layout: page
 ---
+<section class="section">
+    <div class="main-grid homepage-hero">
+        <h1>Algo is a data-visualization studio specializing in video automation. We run a platform that turns data into videos, at scale.</h1>
+        <img class="homepage-hero-image" src="https://images.ctfassets.net/2orm8gd3ce6v/5aI4XuTk0yQpDLB2HyHqpm/63e24053cdbe55d56ca5844a2d5b2de5/designbysoil-homepage-hero.png" />
+    </div>
+</section>
 {% assign projects = site.data.projects %}
 <section class="section">
     <div class="project-list">
+        <div class="item-header">Projects</div>
         {% for project in projects %}
             <div class="item"><a href="{{ project[1]['page'] }}">{{ project[1]['title'] }}</a></div>
         {% endfor %}

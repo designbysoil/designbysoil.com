@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 	// Slick Slider
 	$('.slideshow').slick({
 		infinite: true,

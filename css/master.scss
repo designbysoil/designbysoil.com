@@ -73,6 +73,15 @@ body {
     line-height: 36px;
 }
 
+h1 {
+    color: #f2f1d6;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 55px;
+}
+
 h2 {
     color: #f2f1d6;
     margin-top: 0;
@@ -104,21 +113,81 @@ a {
     font-weight: 400;
 }
 
+.main-grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.homepage-hero {
+    h1 {
+        grid-row: 1;
+        grid-column: 1 / 8;
+        align-self: flex-end;
+        padding-bottom: 60px;
+    }
+    .homepage-hero-image {
+        grid-row: 1;
+        grid-column: 6 / -1;
+        z-index: -1;
+    }
+}
+
 .heading.center {
     text-align: center;
 }
 
-.project-hero.margin-top-60 {
+.margin-top-60 {
     margin-top: 60px;
 }
 
 .page-wrapper {
     width: 100%;
-    margin-bottom: 100px;
+    padding-bottom: 250px;
     padding-left: 60px;
     padding-right: 60px;
     overflow: hidden;
 }
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-list .item-header {
+    color: #A37F5B;
+    padding: 20px 0;
+    border-bottom: 1px solid;
+}
+
+.project-list a {
+    display: block;
+    padding: 20px 0;
+    &:hover .media {
+        opacity: 1;
+        transition: ease .2s;
+        pointer-events: none;
+    }
+}
+
+.project-list a .media {
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    box-sizing: border-box;
+    transition: ease .2s;
+    position: absolute;
+    transform: translate(120%, -50%);
+    z-index: -1;
+    object-fit: cover;
+    pointer-events: none;
+    img {
+        border-radius: 8px;
+        pointer-events: none;
+    }
+}
+
 
 .block-image {
     justify-content: center;
@@ -140,7 +209,7 @@ a {
     overflow: hidden;
 }
 
-.align-bottom {
+.padding-bottom--0 {
     padding-bottom: 0;
 }
 
@@ -158,25 +227,18 @@ a {
 .black-image-center {
     align-self: center;
     display: flex;
-}
-
-.footer-wrapper {
-    max-width: 1220px;
-    padding-left: 60px;
-    padding-right: 60px;
-    padding-bottom: 100px;
+    padding: 40px;
 }
 
 .footer {
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-columns: 1fr;
+    max-width: 1220px;
+    justify-content: space-between;
     align-items: start;
-    justify-items: start;
-    margin-top: 220px;
-    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
 }
 
 .footer-elsewhere {
@@ -216,6 +278,12 @@ a {
     margin-top: 10px;
 }
 
+.credit {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #B7B7B7;
+}
+
 
 .splide {
     width: 100%;
@@ -245,24 +313,29 @@ a {
 }
 
 @media screen and (max-width: 991px) {
+    h1 {
+        margin-bottom: 5px;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
     h2 {
         margin-bottom: 5px;
         font-size: 18px;
         line-height: 26px;
     }
 
-    .main-grid,
-    .lead {
-        display: block;
-    }
-
     .header,
     .page-wrapper,
-    .footer-wrapper {
+    .footer {
         padding-left: 40px;
         padding-right: 40px;
         font-size: 18px;
         line-height: 26px;
+    }
+
+    .page-wrapper {
+        overflow: hidden;
     }
 
     .block-image-inner {
@@ -293,6 +366,16 @@ a {
     .project-meta {
         margin-bottom: 10px;
     }
+
+    .project-list a {
+        overflow: hidden;
+    }
+
+    .project-list a .media {
+        max-width: 300px;
+        transform: translate(60%, -50%);
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -302,9 +385,13 @@ a {
 
     .header,
     .page-wrapper,
-    .footer-wrapper {
+    .footer {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .page-wrapper {
+        overflow: hidden;
     }
 
     .block-grid {
@@ -325,6 +412,15 @@ a {
     .header-nav {
         margin-top: 10px;
     }
+
+    .project-list a {
+        overflow: hidden;
+    }
+
+    .project-list a .media {
+        max-width: 300px;
+    }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -349,4 +445,14 @@ a {
         flex-flow: wrap;
         margin-top: 10px;
     }
+
+    .project-list a {
+        overflow: hidden;
+    }
+
+    .project-list a .media {
+        max-width: 200px;
+        display: none
+    }
+
 }

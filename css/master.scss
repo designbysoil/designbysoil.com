@@ -332,6 +332,10 @@ a {
         line-height: 26px;
     }
 
+    .page-wrapper {
+        overflow: hidden;
+    }
+
     .block-image-inner {
         padding: 0;
     }
@@ -360,6 +364,7 @@ a {
     .project-meta {
         margin-bottom: 10px;
     }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -372,6 +377,10 @@ a {
     .footer {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .page-wrapper {
+        overflow: hidden;
     }
 
     .block-grid {
@@ -392,10 +401,7 @@ a {
     .header-nav {
         margin-top: 10px;
     }
-    
-    .project-list .media {
-        transform: translate(10%, -50%);
-    }
+
 }
 
 @media screen and (max-width: 479px) {
@@ -420,4 +426,5 @@ a {
         flex-flow: wrap;
         margin-top: 10px;
     }
+
 }

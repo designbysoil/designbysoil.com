@@ -160,7 +160,7 @@ a {
     border-bottom: 1px solid;
 }
 
-.project-list .item a {
+.project-list a {
     display: flex;
     padding: 20px 0;
     &:hover .media {
@@ -169,20 +169,20 @@ a {
     }
 }
 
-.project-list .media {
+.project-list a .media {
     opacity: 0;
     width: 100%;
     height: auto;
-    max-width: 400px;
+    max-width: 350px;
     box-sizing: border-box;
     transition: ease .2s;
     position: absolute;
     transform: translate(120%, -50%);
-    z-index: -2;
+    z-index: -1;
     object-fit: cover;
+    pointer-events: none;
     img {
         border-radius: 8px;
-        pointer-events: none;
     }
 }
 
@@ -394,7 +394,7 @@ a {
     }
     
     .project-list .media {
-        transform: translate(50%, -50%);
+        transform: translate(10%, -50%);
     }
 }
 

@@ -143,7 +143,7 @@ a {
 
 .page-wrapper {
     width: 100%;
-    margin-bottom: 100px;
+    padding-bottom: 250px;
     padding-left: 60px;
     padding-right: 60px;
     overflow: hidden;
@@ -161,9 +161,31 @@ a {
 }
 
 .project-list .item a {
+    position: relative;
     display: flex;
     padding: 20px 0;
+    &:hover .media {
+        opacity: 1;
+        transition: ease .2s;
+    }
 }
+
+.project-list .media {
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    box-sizing: border-box;
+    transition: ease .2s;
+    position: absolute;
+    transform: translate(120%, -50%);
+    z-index: -2;
+    object-fit: cover;
+    img {
+        border-radius: 8px;
+    }
+}
+
 
 .block-image {
     justify-content: center;
@@ -369,6 +391,10 @@ a {
 
     .header-nav {
         margin-top: 10px;
+    }
+    
+    .project-list .media {
+        transform: translate(50%, -50%);
     }
 }
 

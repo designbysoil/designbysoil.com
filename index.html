@@ -13,7 +13,13 @@ layout: page
     <div class="project-list">
         <div class="item-header">Projects</div>
         {% for project in projects %}
-            <div class="item"><a href="{{ project[1]['page'] }}">{{ project[1]['title'] }}</a></div>
+            <div class="item">
+                <a href="{{ project[1]['page'] }}">{{ project[1]['title'] }}
+                    <div class="media">
+                        <img src="{{ project[1]['thumbnail'] }}" />
+                    </div>
+                </a>
+            </div>
         {% endfor %}
     </div>
 </section>

@@ -2,6 +2,7 @@
 qf:
   title: "Qatar Foundation –– Navigation redesign"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg"
   page: "/project/qatar-foundation-navigation-redesign"
   client: "Qatar Foundation"
   toolkit: "UX, UI"
@@ -19,23 +20,14 @@ qf:
 healthdesk:
   title: "Meedan –– Health Desk"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/4FRngDneEoEYjoFH7uoj7N/e643eaf0a93ab41b938d8a5d7c32b49a/sample-full-bleed.jpg"
   page: "/project/health-desk"
   client: "Meedan"
   toolkit: "UX, UI"
-  documentation:
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/4OD7IfWs8vQb4oOeVmyLH6/f22fc60d92095a55ae4c11924a6ef233/QF_Navigation_Redesign_____Research_3.jpg"
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/57f2xHqpP5uc6yMATZZxMQ/6dae6fc89d9e34927009670773e2c1a6/QF_Navigation_Redesign_____Research_4.jpg"
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/2g5f0vRe4I8sYreU0uGbgH/54a3e8142d9b72ff9cb55c5f49d17971/QF_Navigation_Redesign_____Research_5.jpg"
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/5VkkhGzThRY0hUfHdWY1qr/32ca0b4d14d3d6f34f43255c4cdccafb/QF_Navigation_Redesign_____Research_6.jpg"
-  case:
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/XD7F5KVIJBbjUVlpjS93Y/7c2a1db844e80c92aaa5b3a1504b2032/QF_Navigation_-_Documentation_-_Presentations_-_1.jpg"
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/4tgsF7t1cZH1Uj8b6BDenf/e4205b172d175bfe1f17f66a8969b6cb/QF_Navigation_-_Documentation_-_Presentations_-_2.jpg"
-  research:
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/6CGbJJ43hpn6Dwyfd2Jhs5/79aba23737f03102b1e0f991b9db0d8f/Research_G1_L1_P1.jpg"
-    - image: "https://images.ctfassets.net/2orm8gd3ce6v/3sQS9HwkyZX921F0Sh2xFU/260e01903ae853e3ae6e3aeccd5456c4/Research_G1_expanded.jpg"
 credcat:
   title: "Meedan –– Credibility Catalog"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg"
   page: "/project/meedan-credibility-catalog"
   client: "Meedan"
   toolkit: "UX, UI"

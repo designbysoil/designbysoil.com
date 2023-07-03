@@ -52,3 +52,11 @@ credcat:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/6a8kArxJiA2jlE9EO7z8oZ/0eb63892614aa74e3e5ebec2d9b55264/Credibility_Catalog_-_Wireframes_-_3.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/7Mb0VayTXBCBcFIWgekHrn/8ecc8918d76edc9b1543f234a29f37c1/Credibility_Catalog_-_Wireframes_-_4.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/XX1yVNqYphO0RGmQhci8s/f0c16a768653e5293c4c818cde3b46ab/Credibility_Catalog_-_Wireframes_-_5.jpg"
+misinfodemia:
+  title: "Misinfodemia Podcast"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2DaiOGtOi4mcoo56IN8pQS/83177968a5efb9f661860e3c8c82d8a8/misinfodemia-hero.png"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/7p7sBcm7d9ZwoGP9uLr60e/a14d98129bbb178df25a3c946b05820b/misinfodemia-podcast-phone-ep1.jpg"
+  crop: "center"
+  page: "/project/misinfodemia"
+  client: "Meedan"
+  toolkit: "Branding, Web Design"

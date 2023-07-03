@@ -176,7 +176,6 @@ a {
     width: 100%;
     height: auto;
     max-width: 350px;
-    box-sizing: border-box;
     transition: ease .2s;
     position: absolute;
     transform: translate(120%, -50%);
@@ -212,6 +211,30 @@ a {
         .title {
             grid-column: span 4;
         }
+    }
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    > div {
+        max-height: 362px;
+        
+        &:hover img {
+            opacity: 1;
+            filter: none;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        filter: grayscale(1);
+        opacity: 0.8;
+        transition: ease .2s;
+        border-radius: 8px;
     }
 }
 
@@ -425,6 +448,14 @@ a {
     .project-list a .media {
         max-width: 300px;
         transform: translate(60%, -50%);
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+        img {
+            height: 150px;
+            border-radius: 4px;
+        }
     }
 
 }

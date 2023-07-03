@@ -21,7 +21,7 @@ qf:
 healthdesk:
   title: "Meedan –– Health Desk"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
-  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/ed3c2191d53adb9b5e8c2f1d1af05bfc/healthdesk-homepage-v2.jpg?fm=jpg&fl=progressive&fit=fill&f=center&w=1320&h=880"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/ed3c2191d53adb9b5e8c2f1d1af05bfc/healthdesk-homepage-v2.jpg"
   crop: "center"
   page: "/project/health-desk"
   client: "Meedan"

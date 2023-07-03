@@ -1,7 +1,7 @@
 ---
 qf:
   title: "Qatar Foundation –– Navigation redesign"
-  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/4nfNRASGXqdXvDacIbUrhb/f792fc9aaad4c23d9b822bef5120c305/qf-nav-redesign-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg"
   crop: "faces"
   page: "/project/qatar-foundation-navigation-redesign"
@@ -21,14 +21,14 @@ qf:
 healthdesk:
   title: "Meedan –– Health Desk"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
-  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/4FRngDneEoEYjoFH7uoj7N/e643eaf0a93ab41b938d8a5d7c32b49a/sample-full-bleed.jpg"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/ed3c2191d53adb9b5e8c2f1d1af05bfc/healthdesk-homepage-v2.jpg?fm=jpg&fl=progressive&fit=fill&f=center&w=1320&h=880"
   crop: "center"
   page: "/project/health-desk"
   client: "Meedan"
   toolkit: "UX, UI"
 credcat:
   title: "Meedan –– Credibility Catalog"
-  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/1Y2Myo50TvhpRh1aZiwfH9/f6a35e9161d6ac6d4f1afe5f9cf0870c/meedan-credcat-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg"
   crop: "faces"
   page: "/project/meedan-credibility-catalog"

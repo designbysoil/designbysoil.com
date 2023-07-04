@@ -1,6 +1,7 @@
 ---
 qf:
   title: "Qatar Foundation –– Navigation redesign"
+  color: "#FDF0BA"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/4nfNRASGXqdXvDacIbUrhb/f792fc9aaad4c23d9b822bef5120c305/qf-nav-redesign-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg"
   crop: "faces"
@@ -20,6 +21,7 @@ qf:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/3sQS9HwkyZX921F0Sh2xFU/260e01903ae853e3ae6e3aeccd5456c4/Research_G1_expanded.jpg"
 healthdesk:
   title: "Meedan –– Health Desk"
+  color: "#FFD9A8"  
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/6izup59g4BEiSZMactzsi0/a894c3f2f9b367259a9b31e93cf117d4/health-desk-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/825eb40d13d2278d5a29dc3e7837d178/healthdesk-homepage-v2.jpg"
   crop: "center"
@@ -28,6 +30,7 @@ healthdesk:
   toolkit: "UX, UI"
 credcat:
   title: "Meedan –– Credibility Catalog"
+  color: "#BAFCFF"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/1Y2Myo50TvhpRh1aZiwfH9/f6a35e9161d6ac6d4f1afe5f9cf0870c/meedan-credcat-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg"
   crop: "faces"
@@ -54,6 +57,7 @@ credcat:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/XX1yVNqYphO0RGmQhci8s/f0c16a768653e5293c4c818cde3b46ab/Credibility_Catalog_-_Wireframes_-_5.jpg"
 misinfodemia:
   title: "Misinfodemia Podcast"
+  color: "#FFDDED"
   hero: "https://images.ctfassets.net/2orm8gd3ce6v/2DaiOGtOi4mcoo56IN8pQS/83177968a5efb9f661860e3c8c82d8a8/misinfodemia-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/7p7sBcm7d9ZwoGP9uLr60e/a14d98129bbb178df25a3c946b05820b/misinfodemia-podcast-phone-ep1.jpg"
   crop: "center"

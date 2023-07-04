@@ -20,8 +20,8 @@ qf:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/3sQS9HwkyZX921F0Sh2xFU/260e01903ae853e3ae6e3aeccd5456c4/Research_G1_expanded.jpg"
 healthdesk:
   title: "Meedan –– Health Desk"
-  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
-  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/ed3c2191d53adb9b5e8c2f1d1af05bfc/healthdesk-homepage-v2.jpg"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/6izup59g4BEiSZMactzsi0/a894c3f2f9b367259a9b31e93cf117d4/health-desk-hero.png"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/825eb40d13d2278d5a29dc3e7837d178/healthdesk-homepage-v2.jpg"
   crop: "center"
   page: "/project/health-desk"
   client: "Meedan"

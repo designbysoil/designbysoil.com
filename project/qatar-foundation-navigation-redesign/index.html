@@ -4,9 +4,10 @@ layout: page
 project: qf
 ---
 {% assign project = site.data.projects[page.project] %}
-{% assign documentation_slides = project.documentation %}
+{% comment %} {% assign documentation_slides = project.documentation %} {% endcomment %}
 {% assign research_slides = project.research %}
 {% assign case_slides = project.case %}
+{% assign display_slides = project.display %}
 {% include project-hero-image.html image_url = project.hero %}
 {% include text-block.html heading = "Challenge" text = "Qatar Foundation is a unique non-profit organization from Qatar. With around 50 entities working in education, research and community development. After a successful website redesign, they needed to revisit their website navigation to increase content discovery and findability for their wide range of audience." %}
 {% include project-meta.html client = project.client toolkit = project.toolkit %}
@@ -14,7 +15,7 @@ project: qf
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/4nFf8YRrSwCiSQynuda04R/bfcac58dcd79cd9dec8c8e9f484967ab/Landing_page_G1_no_background_1.jpg" align = "bottom" image_class = "rounded-top" %}
 {% include block-image-carousel.html slides = case_slides %}
 {% include text-block.html heading = "Solution" text = "Designed a comprehensive navigation system for desktop which included global navigation, expanded local navigation and in-page navigation that did not compromise the minimal aesthetics of the existing Qatar Foundation website. For mobile users, I adopted the bottom navigation pattern to minimize the interaction cost of having the hamburger menu at the top of the screen." %}
-{% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/394Oz8yccKI1hGEeZxLFDz/82674b2065c9f0d148fe01582541b9cf/qf-education-display-v2.jpg" %}
+{% include block-image-full-bleed-slideshow.html slides = display_slides %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/7yzGWioK4vOvHuzm8Hm4I8/0bcb7aa3d4fbeb973934c40ab58dbfd9/Education_G1_L1_P1.jpg" %}
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6hxZT6bz5hrQ3peOjlft06/463ee87b994d02811eb4f97f1f9d9d0d/qf.org.qa_navigation_education_mobile.png" %}
 {% comment %} {% include block-image-carousel.html slides = documentation_slides border = true %} {% endcomment %}

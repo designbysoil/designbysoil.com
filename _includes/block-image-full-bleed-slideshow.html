@@ -1,0 +1,16 @@
+<section class="section">
+    
+      <div class="slideshow">
+        {% for slide in include.slides %}
+            <div aria-label="{{ forloop.index }} of {{ forloop.length }}" role="group" class="slide__item">
+                <img
+                src="{{ slide.image }}"
+                sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 91vw"
+                srcset="{{ slide.image }}?fl=progressive&q=90&w=500 500w, {{ slide.image }}?fl=progressive&q=90&w=800 800w, {{ slide.image }}?fl=progressive&q=90&w=1080 1080w, {{ slide.image }} 1318w"
+                alt=""
+                class="{{ include.image_class }}">
+            </div>
+        {% endfor %}
+      </div>
+    
+</section>

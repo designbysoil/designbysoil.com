@@ -100,6 +100,13 @@ h3 {
     line-height: 28px;
 }
 
+.small {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+    opacity: 0.7;
+}
+
 
 a {
     color: #ecf0f3;
@@ -172,7 +179,9 @@ a {
 }
 
 .project-list a {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
     &:hover .media {
         opacity: 1;
@@ -188,7 +197,7 @@ a {
     max-width: 300px;
     transition: ease .2s;
     position: absolute;
-    transform: translate(120%, -50%);
+    transform: translate(180%, -50%);
     z-index: -1;
     object-fit: cover;
     pointer-events: none;
@@ -460,6 +469,7 @@ a {
 
     .project-list a {
         overflow: hidden;
+        display: block;
     }
 
     .project-list a .media {

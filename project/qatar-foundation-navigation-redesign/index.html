@@ -8,17 +8,19 @@ project: qf
 {% assign research_slides = project.research %}
 {% assign case_slides = project.case %}
 {% include project-hero-image.html image_url = project.hero %}
-{% include text-block.html heading = "Challenge" text = "Studio Sociaal Centraal is a unique and human-centered social design studio from the Netherlands. They service a wide range of organisations across the country. After three successful years of building a portfolio and growing the industry as a whole, they needed a brand that would represent their progression and position them as a trusted partner for future clients." %}
+{% include text-block.html heading = "Challenge" text = "Qatar Foundation is a unique non-profit organization from Qatar. With around 50 entities working in education, research and community development. After a successful website redesign, they needed to revisit their website navigation to increase content discovery and findability for their wide range of audience." %}
 {% include project-meta.html client = project.client toolkit = project.toolkit %}
+
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/4nFf8YRrSwCiSQynuda04R/bfcac58dcd79cd9dec8c8e9f484967ab/Landing_page_G1_no_background_1.jpg" align = "bottom" image_class = "rounded-top" %}
 {% include block-image-carousel.html slides = case_slides %}
-{% include text-block.html heading = "Solution" text = "We hosted a series of workshops in close collaboration with Manon and Joes where we defined the strategic direction for the business. This helped us to define a clear proposition and supporting values to clarify Sociaal Centraal's role within the industry - as well as its positioning within the growing field of social design." %}
+{% include text-block.html heading = "Solution" text = "Designed a comprehensive navigation system for desktop which included global navigation, expanded local navigation and in-page navigation that did not compromise the minimal aesthetics of the existing Qatar Foundation website. For mobile users, I adopted the bottom navigation pattern to minimize the interaction cost of having the hamburger menu at the top of the screen." %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/394Oz8yccKI1hGEeZxLFDz/82674b2065c9f0d148fe01582541b9cf/qf-education-display-v2.jpg" %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/7yzGWioK4vOvHuzm8Hm4I8/0bcb7aa3d4fbeb973934c40ab58dbfd9/Education_G1_L1_P1.jpg" %}
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6hxZT6bz5hrQ3peOjlft06/463ee87b994d02811eb4f97f1f9d9d0d/qf.org.qa_navigation_education_mobile.png" %}
-{% include block-image-carousel.html slides = documentation_slides border = true %}
+{% comment %} {% include block-image-carousel.html slides = documentation_slides border = true %} {% endcomment %}
 {% include block-image-slideshow.html slides = research_slides %}
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/4RCNN0NlbnUyqOSmcwJavc/95c9b99ef7da37090289f98e6f351403/QF_Research.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/ttnjruKj34y1oLIRCVEwg/6be7345d73bcccbe1343d2837b7ce534/qf.org.qa_navigation_mobile_research.png" %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/79CGxtx0nhVjCA1FIvf8hN/d46ed783d8e90be33b7f0991c1239aa2/qf-community-tablet.jpg" %}
+{% include text-block.html heading = "Result" text = "By making the global navigation clearly visible on all pages had an immediate effect. Qatar Foundation’s digital team noticed an increase in engagement and lower bounce rates." %}
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/s1OLI4dPoGh6Fjw4ipko4/e594afb2da7ebc614456c98fe8d8ba32/QF_Community.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/4JEwoA0CXr44qqE2LU66WV/e6231f05854f593e8f00b72d02d25131/qf.org.qa_navigation_mobile_community.png" %}
 {% include block-quote.html quote = '"We are very happy with the whole process in which we dived deep into our own story and activities. fffunction converted all our input into a great name and design language."' by = "Manon Barendse - Co-founder of Studio Sociaal Centraal" %}

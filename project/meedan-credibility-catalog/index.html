@@ -8,17 +8,12 @@ project: credcat
 {% assign documentation_slides = project.documentation %}
 {% assign wireframes_slides = project.wireframes %}
 {% include project-hero-image.html image_url = project.hero %}
-{% include text-block.html heading = "Challenge" text = "Studio Sociaal Centraal is a unique and human-centered social design studio from the Netherlands. They service a wide range of organisations across the country. After three successful years of building a portfolio and growing the industry as a whole, they needed a brand that would represent their progression and position them as a trusted partner for future clients." %}
 {% include project-meta.html client = project.client toolkit = project.toolkit %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/2ywkbnSuZ0RWb8zxaFCOOX/1b1d76612465532d6cc724a5aae4e24a/meedan-credcat-macbook.jpg" %}
-{% include text-block.html heading = "Solution" text = "We hosted a series of workshops in close collaboration with Manon and Joes where we defined the strategic direction for the business. This helped us to define a clear proposition and supporting values to clarify Sociaal Centraal's role within the industry - as well as its positioning within the growing field of social design." %}
-{% include block-image-slideshow.html slides = case_slides %}
-{% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6YzquBOLm1AxgHkEqjyeE6/183ec745695a2e133fa1b43248ebfdad/Filter_Dropdown__Areas_of_focus.png" background = "#4C4CFF" credit = "Photo: Steven Snow for CredCon" %}
-{% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/QeBVMn2r2oZyVTYN6rXU7/ffb40d5eca24e3f4200bb21e622cafbe/cerdcat-projects-comparison-view.jpg" %}
+{% include block-image-slideshow.html align = "bottom" slides = wireframes_slides image_class = "border-radius--8-8-0-0" %}
 {% include block-image-carousel.html slides = documentation_slides %}
-{% include text-block.html heading = "Results" text = "Being able to clearly state who they are and why they do the things they do had an immediate effect. Manon and Joes soon noticed an increase in sales. Together we will continue to achieve positive change." %}
+{% include block-image-slideshow.html slides = case_slides %}
+{% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/QeBVMn2r2oZyVTYN6rXU7/ffb40d5eca24e3f4200bb21e622cafbe/cerdcat-projects-comparison-view.jpg" %}
+{% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6YzquBOLm1AxgHkEqjyeE6/183ec745695a2e133fa1b43248ebfdad/Filter_Dropdown__Areas_of_focus.png" background = "#4C4CFF" credit = "Photo: Steven Snow for CredCon" %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6XFbxjjTXkBDfpntOYASdt/b81a0c9c3e49cbbadeedd1ab97f3c8d0/credcat-project-detail.jpg" %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/3LuUnSpxeh6cZ5zl6BD3sY/83d9fdbe8821e9828e65363c6e770a24/meedan-credcat-tablet-project-page.jpg" %}
-{% include text-block.html heading = "Results" text = "Being able to clearly state who they are and why they do the things they do had an immediate effect. Manon and Joes soon noticed an increase in sales. Together we will continue to achieve positive change." %}
-{% include block-image-slideshow.html align = "bottom" slides = wireframes_slides image_class = "border-radius--8-8-0-0" %}
-{% include block-quote.html quote = '"We are very happy with the whole process in which we dived deep into our own story and activities. fffunction converted all our input into a great name and design language."' by = "Manon Barendse - Co-founder of Studio Sociaal Centraal" %}

@@ -1,8 +1,10 @@
 ---
 qf:
   title: "Qatar Foundation –– Navigation redesign"
-  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  color: "#FDF0BA"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/4nfNRASGXqdXvDacIbUrhb/f792fc9aaad4c23d9b822bef5120c305/qf-nav-redesign-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg"
+  crop: "faces"
   page: "/project/qatar-foundation-navigation-redesign"
   client: "Qatar Foundation"
   toolkit: "UX, UI"
@@ -17,20 +19,27 @@ qf:
   research:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/6CGbJJ43hpn6Dwyfd2Jhs5/79aba23737f03102b1e0f991b9db0d8f/Research_G1_L1_P1.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/3sQS9HwkyZX921F0Sh2xFU/260e01903ae853e3ae6e3aeccd5456c4/Research_G1_expanded.jpg"
+  display:
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/2P5HANNSZhxZDV3w7yOuTC/917e0686ffc44352794f2d97651a2874/qf-nav-redesign-education-apple-display.png"
+    - image: "https://images.ctfassets.net/2orm8gd3ce6v/4D3LHaauv1dpribX4zwJCl/00bf3abae71b0fe0f8f1864b5f4781a1/qf-nav-redesign-education-apple-display-dark.png"
 healthdesk:
   title: "Meedan –– Health Desk"
-  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
-  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/4FRngDneEoEYjoFH7uoj7N/e643eaf0a93ab41b938d8a5d7c32b49a/sample-full-bleed.jpg"
+  color: "#FFD9A8"  
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/6izup59g4BEiSZMactzsi0/a894c3f2f9b367259a9b31e93cf117d4/health-desk-hero.png"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/825eb40d13d2278d5a29dc3e7837d178/healthdesk-homepage-v2.jpg"
+  crop: "center"
   page: "/project/health-desk"
   client: "Meedan"
-  toolkit: "UX, UI"
+  toolkit: "UX, UI, Jamstack, Frontend"
 credcat:
   title: "Meedan –– Credibility Catalog"
-  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2Z6eskwyJ5t9JDIA88ty4G/e0cdba808a7e8e1a365b8cd7c229b785/health-desk-hero.png"
+  color: "#BAFCFF"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/1Y2Myo50TvhpRh1aZiwfH9/f6a35e9161d6ac6d4f1afe5f9cf0870c/meedan-credcat-hero.png"
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg"
+  crop: "faces"
   page: "/project/meedan-credibility-catalog"
   client: "Meedan"
-  toolkit: "UX, UI"
+  toolkit: "UX, UI, Jamstack, Frontend"
   case:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/2Q7tF4zALUArRuQlASXv92/616f6f9f17771d8d384d142281fb5f2c/Credibility_Catalog_-_case_-_1.png"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/2bEs9rleect5lIFOEehT88/9827488209abd6801b1c60d9af845c1c/Credibility_Catalog_-_case_-_2.png"
@@ -49,3 +58,12 @@ credcat:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/6a8kArxJiA2jlE9EO7z8oZ/0eb63892614aa74e3e5ebec2d9b55264/Credibility_Catalog_-_Wireframes_-_3.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/7Mb0VayTXBCBcFIWgekHrn/8ecc8918d76edc9b1543f234a29f37c1/Credibility_Catalog_-_Wireframes_-_4.jpg"
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/XX1yVNqYphO0RGmQhci8s/f0c16a768653e5293c4c818cde3b46ab/Credibility_Catalog_-_Wireframes_-_5.jpg"
+misinfodemia:
+  title: "Misinfodemia Podcast"
+  color: "#FFDDED"
+  hero: "https://images.ctfassets.net/2orm8gd3ce6v/2DaiOGtOi4mcoo56IN8pQS/83177968a5efb9f661860e3c8c82d8a8/misinfodemia-hero.png"
+  thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/7p7sBcm7d9ZwoGP9uLr60e/a14d98129bbb178df25a3c946b05820b/misinfodemia-podcast-phone-ep1.jpg"
+  crop: "center"
+  page: "/project/misinfodemia"
+  client: "Meedan"
+  toolkit: "Branding, Web Design"

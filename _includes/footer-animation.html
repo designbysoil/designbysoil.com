@@ -1,0 +1,137 @@
+<div id="footer-anim" style="opacity: 1;" class="footer-animation-a"><canvas id="defaultCanvas0" class="p5Canvas" style="width: 1665px; height: 309px;" width="3330" height="618"></canvas></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+<script>
+    //footer-animation-script
+  let container = document.querySelector(".footer-animation-a");
+  let size = {x: container.offsetWidth, y: container.offsetHeight};
+
+  window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY;
+    if(scrollY > size.y){
+      pause();
+    } else {
+      start();
+    }
+  });
+
+  // footer
+  let sketch = function( sk ) {
+  	let canvas;
+    let dim;
+    const gridSize = 20;
+    let gridSizeX, gridSizeY;
+    let margin, innerWidth, cellSize;
+    let mx = 0, my = 0;
+    let strks = [];
+    let time = 0;
+
+    sk.pause = false;
+
+    sk.setup = function() {
+      canvas = sk.createCanvas(size.x, size.y);
+      sk.smooth();
+      sk.pixelDensity(sk.displayDensity());
+
+      dim = sk.min(sk.width, sk.height);
+
+      margin = dim * 0.1;
+      innerWidth = sk.width - margin;
+      cellSize = innerWidth / gridSize;
+
+      if (sk.width >= sk.height) {
+        gridSizeX = gridSize;
+        gridSizeY = sk.floor(gridSize * (sk.height / sk.width));
+      } else {
+        gridSizeX = sk.floor(gridSize * (sk.width / sk.height));
+        gridSizeY = gridSize;
+      }
+
+      for (let y = 0; y < gridSizeY; y += 1) {
+        for (let x = 0; x < gridSizeX; x += 1) {
+          strks.push(sk.max(cellSize * 0.8 * dim * 0.0002, 0.5));
+        }
+      }
+
+      sk.noFill();
+      sk.stroke(255);
+      sk.strokeCap(sk.SQUARE);
+      sk.strokeWeight(4);
+    };
+
+    sk.draw = function() {
+      sk.clear();
+
+      if(sk.pause){
+        sk.noLoop();
+      } else {
+        sk.loop();
+      }
+
+      time += 0.001;
+
+      const tmx = sk.mouseX;
+      const tmy = sk.mouseY;
+
+      mx += (tmx - mx) * 0.075;
+      my += (tmy - my) * 0.075;
+
+      let i = 0;
+
+      for (let y = 0; y < gridSizeY; y += 1) {
+        for (let x = 0; x < gridSizeX; x += 1) {
+          const u = gridSizeX <= 1 ? 0.5 : x / (gridSizeX - 1);
+          const v = gridSizeY <= 1 ? 0.5 : y / (gridSizeY - 1);
+
+          const px = sk.lerp(cellSize, sk.width - cellSize, u);
+          const py = sk.lerp(cellSize, sk.height - cellSize, v);
+
+          const rotation = sk.sin(sk.map(mx, 0, sk.width, -sk.PI/10, sk.PI/10) + ((u * sk.PI) / 2) * 0.5) * 2 * sk.TWO_PI;
+          const lineSize = sk.sin(my + v * sk.TWO_PI) * 0.5 + 0.5;
+
+          const d = sk.dist(px, py, mx, my);
+          const score = sk.exp(d * -0.003);
+
+          sk.segment(px, py, sk.min(cellSize * 0.8 * dim * 0.002, cellSize * 0.8), rotation, strks[i] * score);
+          i++;
+        }
+      }
+    };
+    
+    // Draw a line segment centred at the given point
+    sk.segment = function(x, y, length, angle = 0, strk = 1) {
+      const r = length / 2;
+      const u = Math.cos(angle);
+      const v = Math.sin(angle);
+      sk.strokeWeight(strk);
+      sk.line(x - u * r, y - v * r, x + u * r, y + v * r);
+    }
+
+    sk.windowResized = function() {
+      size = {x: container.offsetWidth, y: container.offsetHeight};
+      sk.resizeCanvas(size.x, size.y);
+
+      dim = sk.min(sk.width, sk.height);
+      margin = dim * 0.1;
+      innerWidth = sk.width - margin * 2;
+      cellSize = innerWidth / gridSize;
+
+      if (sk.width >= sk.height) {
+        gridSizeX = gridSize;
+        gridSizeY = sk.floor(gridSize * (sk.height / sk.width));
+      } else {
+        gridSizeX = sk.floor(gridSize * (sk.width / sk.height));
+        gridSizeY = gridSize;
+      }
+    }
+  };
+  let p5sketch = new p5(sketch, container);
+
+  function pause(){
+    p5sketch.pause = true;
+  }
+
+  function start(){
+    p5sketch.pause = false;
+    p5sketch.loop();
+  }
+</script>

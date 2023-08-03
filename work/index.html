@@ -1,0 +1,18 @@
+---
+title: Designbysoil – Work of Abdul Rehman Khawar
+layout: page
+---
+{% assign projects = site.data.projects %}
+<section class="section">
+    <div class="project-grid">
+        {% for project in projects %}
+            <div>
+                <a href="{{ project[1]['page'] }}">
+                    <img src="{{ project[1]['thumbnail'] }}?w=400&h=400{% if project[1]['crop'] == 'faces' %}&fit=crop&f=faces{% endif %}" />
+                <h3 style="color:{{ project[1]['color'] }} !important;">{{ project[1]['title'] }}</h3>
+                <div class="small">{{ project[1]['toolkit'] }}</div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>

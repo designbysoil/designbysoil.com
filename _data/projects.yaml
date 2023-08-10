@@ -38,7 +38,7 @@ credcat:
   thumbnail: "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg"
   crop: "faces"
   page: "/project/meedan-credibility-catalog"
-  client: "Meedan"
+  client: "Meedan, Hacks/Hackers"
   toolkit: "UX, UI, Jamstack, Frontend"
   case:
     - image: "https://images.ctfassets.net/2orm8gd3ce6v/2Q7tF4zALUArRuQlASXv92/616f6f9f17771d8d384d142281fb5f2c/Credibility_Catalog_-_case_-_1.png"

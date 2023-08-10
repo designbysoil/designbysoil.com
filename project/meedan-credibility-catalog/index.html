@@ -8,12 +8,14 @@ project: credcat
 {% assign documentation_slides = project.documentation %}
 {% assign wireframes_slides = project.wireframes %}
 {% include project-hero-image.html image_url = project.hero %}
+{% include text-block.html heading = "Challenge" text = "Meedan, together with Hacks/Hackers, wanted to develop an interactive tool to support initiatives working to improve information quality. Using the tool, potential funders, researchers and practitioners needed to filter credibility initiatives from around the world by contextual factors like language and region. Plus what approaches the initiatives were using to combat misinformation." %}
 {% include project-meta.html client = project.client toolkit = project.toolkit %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/2ywkbnSuZ0RWb8zxaFCOOX/1b1d76612465532d6cc724a5aae4e24a/meedan-credcat-macbook.jpg" %}
-{% include block-image-slideshow.html align = "bottom" slides = wireframes_slides image_class = "border-radius--8-8-0-0" %}
-{% include block-image-carousel.html slides = documentation_slides %}
 {% include block-image-slideshow.html slides = case_slides %}
+{% include text-block.html heading = "Solution" text = "Started with wireframes to develop a way to visualize the initiatives based on the four areas of focus as well as across regions and languages. Each initiative would be represented as four blocks of color mapped to its area of focus. The design needed to be engaging yet straightforward, enabling users from varied backgrounds to easily comprehend and extract valuable insights from the data." %}
+{% include block-image-carousel.html slides = documentation_slides %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/77ExpNxdUyVu93d4V1c5Tp/c0ca787260f1843dc79057359a52b667/CredMap_Projects_____Filter_Bar_-_Comparison_View.png" align = "bottom" image_class = "border-radius--8-8-0-0" %}
 {% include block-grid-full-center.html full_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg" center_image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6YzquBOLm1AxgHkEqjyeE6/183ec745695a2e133fa1b43248ebfdad/Filter_Dropdown__Areas_of_focus.png" background = "#4C4CFF" credit = "Photo: Steven Snow for CredCon" %}
 {% include block-image-centered.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/6XFbxjjTXkBDfpntOYASdt/b81a0c9c3e49cbbadeedd1ab97f3c8d0/credcat-project-detail.jpg" %}
+{% include block-image-slideshow.html align = "bottom" slides = wireframes_slides image_class = "border-radius--8-8-0-0" %}
 {% include image-block-full-bleed.html image_url = "https://images.ctfassets.net/2orm8gd3ce6v/3LuUnSpxeh6cZ5zl6BD3sY/83d9fdbe8821e9828e65363c6e770a24/meedan-credcat-tablet-project-page.jpg" %}

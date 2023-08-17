@@ -1,0 +1,23 @@
+---
+title: Meedan –– Team Survey Results
+layout: page
+project: presentation-meedan-team-survey-results
+---
+
+{% assign project = site.data.projects[page.project] %}
+{% assign social_slides = project.social %}
+{% assign social_slides_2 = project.social2 %}
+{% include project-hero-image.html image_url = project.hero %}
+{% include text-block.html text = "Presentation design for the the annual end-of-year organizational feedback survey results." %}
+{% include project-meta.html client = project.client toolkit = project.toolkit %}
+{% include image-block-full-bleed.html image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/C7VmBmlyIzeLlizkrbRA4/d009c4d100c888237977e19e7feb501f/meedan-team-survey-results-presentation_tablet.png"
+%}
+{% include block-image-carousel.html
+slider_style = 'slider-1-per-page'
+slides = social_slides
+align = 'bottom'
+%}
+{% include image-block-full-bleed.html image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/2jmP1Cj2qfAb6cu4VnjVgJ/c90a77266180ecb4340116195d7ac5ed/meedan-team-survey-results-presentation_poster.png"
+%}

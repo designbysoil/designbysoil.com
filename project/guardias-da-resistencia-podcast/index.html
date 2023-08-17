@@ -1,0 +1,34 @@
+---
+title: Guardiãs da Resistência Podcast
+layout: page
+project: guardias-da-resistencia-podcast
+---
+
+{% assign project = site.data.projects[page.project] %}
+{% assign social_slides = project.social %}
+{% assign social_slides_2 = project.social2 %}
+{% include project-hero-image.html image_url = project.hero %}
+{% include text-block.html text = "A podcast about exploring memory as a form of cultural insurgency. Connecting people through memory, regional archives and counter-archives. Recorded in Portuguese." %}
+{% include project-meta.html client = project.client toolkit = project.toolkit %}
+{% include image-block-full-bleed.html image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/5F46rpK4TtCqATK0ZQoJUk/ddcdfc9c717ec13b0a0bf7ef15fcb2ce/Guardia__s_da_Resiste__ncia_____Social.png"
+%}
+{% include block-grid-full.html full_1_image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/6svsoq2boGHVweOtnfsHBU/74848f5ad75d34df32442eb8bdbf7a63/Guardia__s_da_Resiste__ncia_____Phone.png"
+full_2_image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/5w9R44IlZuaENJoxLv1q7l/51f011226b2de0b568dd48cf473a17d4/Guardia__s_da_Resiste__ncia_____Podcast_Covers.png"
+%} {% include image-block-full-bleed.html image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/6fMKpU6T3cKoXkiiigGBiL/a023433428af6149cdb1a88b5b94033f/Guardia__s_da_Resiste__ncia_____Colors.png"
+%} {% include block-grid-full.html full_1_image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/3xVxjNjj51aCUtmcIkvvJA/9c6147fa8ef5b2f840afd95cf63e827f/guardias-da-resistencia-podcast-symbol.png"
+full_2_image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/7CnuSnhEoOpgjDmOgGmIZ/4c8a93bab76ff4cf350edf76d2b9923c/guardias-da-resistencia-podcast-wordmark.png"
+%}
+{% include block-image-carousel-with-text.html
+slides = social_slides
+slider_style = 'slider-2-per-page'
+heading = 'Social – Featured Project'
+description = 'Template for projects featured in the podcast.'
+detail = ''
+align = 'bottom'
+%}

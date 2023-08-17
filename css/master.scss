@@ -311,6 +311,24 @@ a {
     display: grid;
 }
 
+.supporting-content {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    align-items: stretch;
+    justify-items: stretch;
+    display: grid;
+    margin-bottom: 30px;
+    .supporting-content-copy {
+        padding-right: 30px;
+    }
+    .supporting-content-details {
+        margin-top: 38px;
+    }
+}
+
 .black-image-center {
     align-self: center;
     display: flex;
@@ -448,7 +466,7 @@ a {
         border-top-right-radius: 4px;
     }
 
-    .block-image {
+    .block-image, .supporting-content {
         display: block;
     }
 

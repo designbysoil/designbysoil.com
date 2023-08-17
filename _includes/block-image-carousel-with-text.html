@@ -1,8 +1,27 @@
 {% assign slides = include.slides %}
 {% assign slider_style = include.slider_style | default: 'slider-1-per-page' %}
 <section class="section">
-  <div class="block-image">
-    <div class="block-image-inner{% if include.align == 'bottom' %} padding-bottom--0{% endif %}">
+  <div class="block-image" >
+    <div class="block-image-inner" style="padding-left: 0 !important;">
+    
+    {% if include.heading %}
+      <div class="supporting-content">
+        
+        <div class="supporting-content-copy">
+            <h3>{{ include.heading }}</h3>
+            <div class="type-detail">
+                {{ include.description }}
+            </div>
+        </div>
+
+        <div class="supporting-content-meta">
+            <div class="small">
+                {% include.meta %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+        
       <div class="{{ slider_style }}">
         <div class="splide">
           <div class="splide__track">

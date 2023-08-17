@@ -14,11 +14,13 @@
             </div>
         </div>
 
-        <div class="supporting-content-meta">
+        {% if include.details %}
+        <div class="supporting-content-details">
             <div class="small">
-                {% include.meta %}
+                {% include.details %}
             </div>
         </div>
+        {% endif %}
     </div>
     {% endif %}
         

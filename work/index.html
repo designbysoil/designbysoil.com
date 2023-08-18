@@ -8,7 +8,7 @@ layout: page
         {% for project in projects %}
             <div>
                 <a href="{{ project[1]['page'] }}">
-                    <img src="{{ project[1]['thumbnail'] }}?w=400&h=400{% if project[1]['crop'] == 'faces' %}&fit=crop&f=faces{% endif %}" />
+                    <img src="{{ project[1]['thumbnail'] }}?w=1000&h=1000{% if project[1]['crop'] == 'faces' %}&fit=crop&f=faces{% endif %}" />
                 <h3 style="color:{{ project[1]['color'] }} !important;">{{ project[1]['title'] }}</h3>
                 <div class="small">{{ project[1]['toolkit'] }}</div>
                 </a>

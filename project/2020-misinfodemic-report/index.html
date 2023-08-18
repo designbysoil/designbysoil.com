@@ -1,0 +1,35 @@
+---
+title: Meedan –– 2020 Misinfodemic Report
+layout: page
+project: 2020-misinfodemic-report
+---
+
+{% assign project = site.data.projects[page.project] %}
+{% assign covers_slides = project.covers %}
+{% include project-hero-image.html image_url = project.hero %}
+{% include text-block.html text = "An interdisciplinary collection of reports and essays that seek to map the anotomy of
+a global pandemic." %}
+{% include project-meta.html client = project.client toolkit = project.toolkit %}
+{% include image-block-full-bleed.html image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/2ZuotuL4EURiH8Td8y3NSp/9f601a0b627d6daa7eb5490678d0b802/meedan-2020-misinfodemic-report_laptop.png"
+%}
+{% include block-grid-full.html full_1_image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/4Yq7yVigaxGf5FKoWPHAjw/edcc747376c40ddf6d24ea01b9c3017a/Meedan_2020_Misinfodemic_Report_Covers_Tablet.png"
+full_2_image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/ir1nRTmmrM0HmOz1XU5Xh/0ac108d9c428fdeccf2f8535cc4994b1/Meedan_2020_Misinfodemic_Report_Covers.png"
+%}
+{% include block-image-centered.html image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/5XBJpIEC3lcbnRjagIULsB/72030b1aa66c6d113c76b322f85b925d/meedan-2020-misinfodemic-report_landing-page.png"
+align = "bottom" image_class = "rounded-top" %}
+{% include block-image-centered.html image_url =
+"https://images.ctfassets.net/2orm8gd3ce6v/7nTNaPAIbouf1Wf1flXzXc/98807af7db28daae5a96f41077881a0b/meedan-2020-misinfodemic-report_web_report.png"
+align = "bottom" image_class = "rounded-top" %}
+
+{% include block-image-carousel-with-text.html
+slides = covers_slides
+slider_style = 'slider-2-per-page'
+heading = 'Report series'
+description = ''
+detail = ''
+align = 'bottom'
+%}

@@ -114,7 +114,7 @@ presentation-meedan-team-survey-results:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/6FcgNYfkHMIjvqQkWsADzP/3bb8c0c0e20f94afba3a1eef650a9328/Meedan_Team_Survey_Results_2019-2021_51.jpeg'
 2020-misinfodemic-report:
   title: '2020 Misinfodemic Report'
-  color: '#E6F1FF'
+  color: '#BAFF7B'
   hero: 'https://images.ctfassets.net/2orm8gd3ce6v/6eEfpyXVtyhudZXYSEXaRK/dccd8d0d568de1d1ac012675eb1c6784/meedan-2020-misinfodemic-report_landing-page-hero.png'
   thumbnail: 'https://images.ctfassets.net/2orm8gd3ce6v/2ZuotuL4EURiH8Td8y3NSp/9f601a0b627d6daa7eb5490678d0b802/meedan-2020-misinfodemic-report_laptop.png'
   crop: 'center'

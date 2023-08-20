@@ -30,7 +30,7 @@ healthdesk:
   crop: 'center'
   page: '/project/health-desk'
   client: 'Meedan'
-  toolkit: 'Branding and Identity, UX, UI design, Jamstack, Frontend'
+  toolkit: 'Branding and Identity, UX, UI design, Design System, Jamstack, Frontend'
 guardias-da-resistencia-podcast:
   title: 'Guardiãs da Resistência Podcast'
   color: '#E6F1FF'

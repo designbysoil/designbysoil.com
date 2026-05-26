@@ -18,7 +18,7 @@ const { title } = Astro.props;
   <title>{title}</title>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="alternate" type="application/rss+xml" title="Designbysoil" href="/feed.xml">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="/fonts/SuisseIntl-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZP9MB8BPY"></script>
   <script is:inline>
@@ -37,3 +37,109 @@ const { title } = Astro.props;
   <Footer />
 </body>
 </html>
+
+<style is:global>
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .header-wrapper {
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .header-wrapper.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .footer-wrapper {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .footer-wrapper.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  function initRevealAnimations() {
+    const sections = document.querySelectorAll('.page-wrapper > section, .page-wrapper > section .block-grid > *, .page-wrapper > section .project-grid > *, .page-wrapper > section .project-list > a, .page-wrapper > section .grid-list');
+
+    sections.forEach((el) => {
+      el.classList.add('reveal');
+    });
+
+    const header = document.querySelector('.header-wrapper');
+    const footer = document.querySelector('.footer-wrapper');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+
+            // Find stagger index among visible siblings
+            const parent = el.parentElement;
+            if (parent) {
+              const siblings = Array.from(parent.children).filter((c) =>
+                c.classList.contains('reveal')
+              );
+              const index = siblings.indexOf(el);
+              const staggerDelay = index * 0.07;
+              el.style.transitionDelay = `${staggerDelay}s`;
+            }
+
+            el.classList.add('is-visible');
+            observer.unobserve(el);
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+
+    // Header reveals immediately on load
+    if (header) {
+      requestAnimationFrame(() => {
+        header.classList.add('is-visible');
+      });
+    }
+
+    // Footer reveals on scroll
+    if (footer) {
+      const footerObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              (entry.target as HTMLElement).classList.add('is-visible');
+              footerObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      footerObserver.observe(footer);
+    }
+  }
+
+  initRevealAnimations();
+</script>

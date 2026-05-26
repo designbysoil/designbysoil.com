@@ -1,0 +1,177 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  color: string;
+}
+const { title, url, color } = Astro.props;
+---
+
+<div class="project-next-footer-wrapper">
+  <div class="project-next-footer">
+    <div class="project-next-footer__left">
+      <div class="project-next-footer__arrow" aria-hidden="true">
+        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 0V32M14 32L1 19M14 32L27 19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="project-next-footer__contact">
+        <div>Work of Abdul Rehman Khawar<br><a href="mailto:mail@designbysoil.com?subject=Hey%20Ark%21%20I%20got%20a%20question%20for%20you.">mail@designbysoil.com</a></div>
+      </div>
+    </div>
+
+    <div class="project-next-footer__right">
+      <a href={url} class="project-next-footer__next">
+        <div class="project-next-footer__label">Next<br>Project</div>
+        <div class="project-next-footer__title" style={`color: ${color}`}>{title}</div>
+      </a>
+      <div class="project-next-footer__social">
+        <a href="https://ca.linkedin.com/in/abdulrehman">LinkedIn</a>
+        <a href="https://www.instagram.com/designbysoil/">Instagram</a>
+        <a href="https://savee.it/designbysoil/">Savee</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .project-next-footer-wrapper {
+    background: #1e1e1e;
+    color: #ecf0f3;
+    position: sticky;
+    bottom: 0;
+    z-index: 0;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .project-next-footer {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 72vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .project-next-footer__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .project-next-footer__arrow {
+    color: #ecf0f3;
+    opacity: 0.5;
+  }
+
+  .project-next-footer__contact {
+    font-size: clamp(16px, 2.08vw, 30px);
+    line-height: 1.5;
+  }
+
+  .project-next-footer__contact a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .project-next-footer__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .project-next-footer a {
+    border-bottom: none;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-next-footer__contact a {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .project-next-footer__next {
+    display: block;
+  }
+
+  .project-next-footer__next:hover .project-next-footer__title {
+    opacity: 0.8;
+  }
+
+  .project-next-footer__label {
+    font-size: clamp(28px, 3.47vw, 50px);
+    line-height: 1.15;
+    font-weight: 400;
+    color: #ecf0f3;
+  }
+
+  .project-next-footer__title {
+    font-size: clamp(28px, 3.47vw, 50px);
+    line-height: 1.15;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-next-footer__social {
+    display: flex;
+    gap: 30px;
+    font-size: clamp(16px, 2.08vw, 30px);
+  }
+
+  .project-next-footer__social a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .project-next-footer__social a:hover {
+    opacity: 0.6;
+  }
+
+  @media screen and (max-width: 991px) {
+    .project-next-footer-wrapper {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .project-next-footer {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+      min-height: unset;
+      gap: 60px;
+    }
+
+    .project-next-footer__left {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .project-next-footer__arrow {
+      display: none;
+    }
+
+    .project-next-footer__right {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .project-next-footer-wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .project-next-footer {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      gap: 40px;
+    }
+  }
+</style>

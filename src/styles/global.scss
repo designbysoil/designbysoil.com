@@ -194,6 +194,9 @@ a {
     padding-left: 60px;
     padding-right: 60px;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background-color: #161616;
 }
 
 .project-list {
@@ -355,6 +358,8 @@ a {
     width: 100%;
     padding-left: 60px;
     padding-right: 60px;
+    position: relative;
+    z-index: 2;
 }
 
 .header {

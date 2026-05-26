@@ -6,6 +6,7 @@ import ProjectMeta from '../../../components/ProjectMeta.astro';
 import ImageFullBleed from '../../../components/ImageFullBleed.astro';
 import ImageCentered from '../../../components/ImageCentered.astro';
 import GridFullCenter from '../../../components/GridFullCenter.astro';
+import ProjectNextFooter from '../../../components/ProjectNextFooter.astro';
 
 const project = projects.healthdesk;
 ---
@@ -33,4 +34,5 @@ const project = projects.healthdesk;
     align="bottom"
     imageClass="rounded-top"
   />
+  <ProjectNextFooter slot="footer" title={projects['guardias-da-resistencia-podcast'].title} url={projects['guardias-da-resistencia-podcast'].page} color={projects['guardias-da-resistencia-podcast'].color} />
 </BaseLayout>

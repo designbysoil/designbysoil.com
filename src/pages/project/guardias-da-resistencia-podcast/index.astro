@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectNextFooter from '../../../components/ProjectNextFooter.astro';
 import ProjectHero from '../../../components/ProjectHero.astro';
 import ProjectMeta from '../../../components/ProjectMeta.astro';
 import TextBlock from '../../../components/TextBlock.astro';
@@ -32,4 +33,5 @@ const socialSlides = project.social;
     description="Template for projects featured in the podcast."
     perPage={3}
   />
+  <ProjectNextFooter slot="footer" title={projects['misinfodemia'].title} url={projects['misinfodemia'].page} color={projects['misinfodemia'].color} />
 </BaseLayout>

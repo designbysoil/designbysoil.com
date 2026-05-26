@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import AvailabilityMarquee from '../components/AvailabilityMarquee.astro';
+import FooterGallery from '../components/FooterGallery.astro';
 import projects from '../data/projects.yaml';
 ---
 
@@ -36,4 +37,6 @@ import projects from '../data/projects.yaml';
       ))}
     </div>
   </section>
+
+  <FooterGallery projects={Object.values(projects).slice(0, 4)} />
 </BaseLayout>

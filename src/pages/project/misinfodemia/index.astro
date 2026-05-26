@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectNextFooter from '../../../components/ProjectNextFooter.astro';
 import ProjectHero from '../../../components/ProjectHero.astro';
 import ProjectMeta from '../../../components/ProjectMeta.astro';
 import ImageFullBleed from '../../../components/ImageFullBleed.astro';
@@ -23,4 +24,5 @@ const project = projects['misinfodemia'];
   <ImageFullBleed imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/5legGA6wYPfD88QQUe1scS/c7db4316af88ea5ff8711e4bf9b8d56c/Misinfodemia_-_Documentation_-_9.png" />
   <ImageCentered imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/4j4geUipxYnO2M6cCUop6L/1688bffbc1ad31fa7f97c737694cd7bb/misinfodemia-landing-page.png" align="bottom" imageClass="rounded-top" />
   <ImageCentered imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/7lz4lnIfyn9LU5YijRPgaW/31ca7e61b1ded5c9fcf2c56569af88b1/misinfodemia-ep-2.png" align="bottom" imageClass="rounded-top" />
+  <ProjectNextFooter slot="footer" title={projects['credcat'].title} url={projects['credcat'].page} color={projects['credcat'].color} />
 </BaseLayout>

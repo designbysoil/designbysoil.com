@@ -1,0 +1,77 @@
+---
+import { getPlaceholder } from '../utils/placeholder';
+
+interface Props {
+  src: string;
+  srcset?: string;
+  sizes?: string;
+  alt?: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const { src, srcset, sizes, alt = '', loading = 'lazy', class: className } = Astro.props;
+const placeholder = await getPlaceholder(src);
+---
+
+<div class:list={["blur-image", className]}>
+  {placeholder && (
+    <img class="blur-image__placeholder" src={placeholder} alt="" aria-hidden="true" />
+  )}
+  <img
+    class="blur-image__full"
+    src={src}
+    srcset={srcset}
+    sizes={sizes}
+    alt={alt}
+    loading={loading}
+  />
+</div>
+
+<style is:global>
+  .blur-image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blur-image__placeholder {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px);
+    transform: scale(1.2);
+    z-index: 1;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+
+  .blur-image__full {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .blur-image.is-loaded .blur-image__placeholder {
+    opacity: 0;
+  }
+</style>
+
+<script>
+  function initBlurImages() {
+    document.querySelectorAll('.blur-image').forEach((container) => {
+      const full = container.querySelector<HTMLImageElement>('.blur-image__full');
+      if (!full) return;
+      if (full.complete && full.naturalWidth > 0) {
+        container.classList.add('is-loaded');
+      } else {
+        full.addEventListener('load', () => container.classList.add('is-loaded'));
+      }
+    });
+  }
+
+  initBlurImages();
+</script>

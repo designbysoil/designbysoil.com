@@ -1,4 +1,6 @@
 ---
+import BlurImage from './BlurImage.astro';
+
 interface Props {
   imageUrl: string;
   align?: string;
@@ -11,11 +13,10 @@ const { imageUrl, align, imageClass } = Astro.props;
 <section class="section">
   <div class="block-image dark">
     <div class:list={["block-image-inner", { "padding-bottom--0": align === "bottom" }]}>
-      <img
+      <BlurImage
         src={imageUrl}
         sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1403px) 78vw, 1095px"
         srcset={`${imageUrl}?fl=progressive&q=90&w=500 500w, ${imageUrl}?fl=progressive&q=90&w=800 800w, ${imageUrl}?fl=progressive&q=90&w=1080 1080w, ${imageUrl} 1095w`}
-        alt=""
         class={imageClass}
       />
     </div>

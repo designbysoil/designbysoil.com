@@ -1,0 +1,95 @@
+---
+const items = Array.from({ length: 12 });
+---
+
+<a
+  class="availability-marquee"
+  href="mailto:mail@designbysoil.com"
+  aria-label="Availability — I'm open for new opportunities and collaborations"
+>
+  <div class="availability-marquee__track" aria-hidden="true">
+    {items.map(() => (
+      <span class="availability-marquee__item">
+        <span class="availability-marquee__label">Availability</span>
+        <span class="availability-marquee__dot">•</span>
+        <span class="availability-marquee__copy">I'm open for new opportunities and collaborations</span>
+        <span class="availability-marquee__arrow">↗</span>
+      </span>
+    ))}
+    {items.map(() => (
+      <span class="availability-marquee__item">
+        <span class="availability-marquee__label">Availability</span>
+        <span class="availability-marquee__dot">•</span>
+        <span class="availability-marquee__copy">I'm open for new opportunities and collaborations</span>
+        <span class="availability-marquee__arrow">↗</span>
+      </span>
+    ))}
+  </div>
+</a>
+
+<style lang="scss">
+  .availability-marquee {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 451px;
+    height: 32px;
+    overflow: hidden;
+    background: #000;
+    color: #f2f1d6;
+    border: 0;
+    text-decoration: none;
+    font-size: 14.4px;
+    line-height: 1.4;
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .availability-marquee:hover,
+  .availability-marquee:focus-visible {
+    background: #a37f5b;
+  }
+
+  .availability-marquee:focus-visible {
+    outline: 2px solid #a37f5b;
+    outline-offset: 2px;
+  }
+
+  .availability-marquee__track {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    width: max-content;
+    gap: 6px;
+    animation: availability-marquee-scroll 120s linear infinite;
+    will-change: transform;
+  }
+
+  .availability-marquee:hover .availability-marquee__track,
+  .availability-marquee:focus-visible .availability-marquee__track {
+    animation-play-state: paused;
+  }
+
+  .availability-marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    padding-right: 6px;
+  }
+
+  .availability-marquee__copy {
+    color: #fff;
+  }
+
+  @keyframes availability-marquee-scroll {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .availability-marquee__track {
+      animation: none;
+    }
+  }
+</style>

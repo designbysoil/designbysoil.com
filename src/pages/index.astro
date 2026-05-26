@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroArt from '../components/HeroArt.astro';
 import projects from '../data/projects.yaml';
 ---
 
@@ -17,7 +18,9 @@ import projects from '../data/projects.yaml';
       <div class="homepage-hero-content">
         <h1>Digital designer from Canada, working globally / remotely. Crafting purpose-driven brand experiences for screens.</h1>
       </div>
-      <img class="homepage-hero-image" src="https://images.ctfassets.net/2orm8gd3ce6v/5aI4XuTk0yQpDLB2HyHqpm/63e24053cdbe55d56ca5844a2d5b2de5/designbysoil-homepage-hero.png" />
+      <div class="homepage-hero-image">
+        <HeroArt />
+      </div>
     </div>
   </section>
 

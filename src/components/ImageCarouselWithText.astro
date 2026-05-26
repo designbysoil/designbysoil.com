@@ -1,0 +1,214 @@
+---
+interface Props {
+  slides: { image: string }[];
+  heading?: string;
+  description?: string;
+  details?: string;
+  border?: boolean;
+  perPage?: number;
+}
+
+const { slides, heading, description, details, border = false, perPage = 3 } = Astro.props;
+---
+
+<section class="section">
+  <div class="block-image">
+    <div class="block-image-inner" style="padding-left: 0 !important;">
+      {heading && (
+        <div class="supporting-content">
+          <div class="supporting-content-copy">
+            <h3>{heading}</h3>
+            <div class="type-detail">
+              {description}
+            </div>
+          </div>
+          {details && (
+            <div class="supporting-content-details">
+              <div class="small">
+                {details}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      <div class="multi-carousel" data-per-page={perPage}>
+        <div class="multi-carousel__track">
+          {slides.map((slide, i) => (
+            <div
+              class:list={["multi-carousel__slide", { "multi-carousel__slide--border": border }]}
+              aria-label={`${i + 1} of ${slides.length}`}
+              role="group"
+            >
+              <img
+                sizes="(max-width: 479px) 100vw, (max-width: 767px) 50vw, 33vw"
+                srcset={`${slide.image}?fl=progressive&q=90&w=500 500w, ${slide.image}?fl=progressive&q=90&w=800 800w, ${slide.image}?fl=progressive&q=90&w=1080 1080w, ${slide.image}?fl=progressive&q=90&w=1600 1600w`}
+                src={`${slide.image}?fl=progressive`}
+                alt=""
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .multi-carousel {
+    position: relative;
+    overflow: visible;
+    cursor: grab;
+  }
+
+  .multi-carousel.is-dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
+
+  .multi-carousel__track {
+    display: flex;
+    gap: 1rem;
+    overflow: visible;
+    will-change: transform;
+  }
+
+  .multi-carousel.is-dragging .multi-carousel__track {
+    transition: none;
+  }
+
+  .multi-carousel__slide {
+    flex: 0 0 calc((100% - 2rem) / 3);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .multi-carousel__slide--border {
+    border: 1px solid #333;
+  }
+
+  .multi-carousel__slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 767px) {
+    .multi-carousel__slide {
+      flex: 0 0 calc((100% - 1rem) / 2);
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    .multi-carousel__slide {
+      flex: 0 0 85%;
+    }
+  }
+</style>
+
+<script>
+  function initMultiCarousels() {
+    document.querySelectorAll<HTMLElement>('.multi-carousel').forEach((carousel) => {
+      const track = carousel.querySelector<HTMLElement>('.multi-carousel__track');
+      if (!track) return;
+
+      let isDragging = false;
+      let startX = 0;
+      let currentTranslate = 0;
+      let prevTranslate = 0;
+      let animationId: number;
+      let velocity = 0;
+      let lastX = 0;
+      let lastTime = 0;
+
+      const slides = track.querySelectorAll('.multi-carousel__slide');
+
+      function getMaxTranslate() {
+        return -(track!.scrollWidth - carousel.offsetWidth);
+      }
+
+      function clamp(val: number) {
+        return Math.max(getMaxTranslate(), Math.min(0, val));
+      }
+
+      function getSlideWidth() {
+        const slide = slides[0] as HTMLElement;
+        if (!slide) return 0;
+        const gap = parseFloat(getComputedStyle(track!).gap) || 0;
+        return slide.offsetWidth + gap;
+      }
+
+      function momentumSnap() {
+        const slideWidth = getSlideWidth();
+        if (!slideWidth) return;
+        const projected = currentTranslate + velocity * 180;
+        const index = Math.round(-projected / slideWidth);
+        const visibleSlides = Math.round(carousel.offsetWidth / slideWidth);
+        const maxIndex = Math.max(0, slides.length - visibleSlides);
+        const clampedIndex = Math.max(0, Math.min(maxIndex, index));
+        currentTranslate = clamp(-clampedIndex * slideWidth);
+        prevTranslate = currentTranslate;
+
+        const speed = Math.abs(velocity);
+        const duration = Math.min(0.35, Math.max(0.18, speed * 80));
+        track!.style.transition = `transform ${duration}s cubic-bezier(0.22, 1, 0.36, 1)`;
+        track!.style.transform = `translateX(${currentTranslate}px)`;
+      }
+
+      function animation() {
+        track!.style.transform = `translateX(${currentTranslate}px)`;
+        if (isDragging) animationId = requestAnimationFrame(animation);
+      }
+
+      function touchStart(e: PointerEvent) {
+        isDragging = true;
+        startX = e.clientX;
+        lastX = e.clientX;
+        lastTime = Date.now();
+        velocity = 0;
+        carousel.classList.add('is-dragging');
+        track!.style.transition = 'none';
+        animationId = requestAnimationFrame(animation);
+        carousel.setPointerCapture(e.pointerId);
+      }
+
+      function touchMove(e: PointerEvent) {
+        if (!isDragging) return;
+        const now = Date.now();
+        const dt = now - lastTime;
+        if (dt > 0) {
+          velocity = (e.clientX - lastX) / dt;
+        }
+        lastX = e.clientX;
+        lastTime = now;
+        const dx = e.clientX - startX;
+        currentTranslate = clamp(prevTranslate + dx);
+      }
+
+      function touchEnd() {
+        isDragging = false;
+        cancelAnimationFrame(animationId);
+        carousel.classList.remove('is-dragging');
+        momentumSnap();
+      }
+
+      carousel.addEventListener('pointerdown', touchStart);
+      carousel.addEventListener('pointermove', touchMove);
+      carousel.addEventListener('pointerup', touchEnd);
+      carousel.addEventListener('pointercancel', touchEnd);
+
+      carousel.addEventListener('contextmenu', (e) => {
+        if (isDragging) e.preventDefault();
+      });
+
+      window.addEventListener('resize', () => {
+        momentumSnap();
+      });
+    });
+  }
+
+  initMultiCarousels();
+</script>

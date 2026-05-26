@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectHero from '../../../components/ProjectHero.astro';
+import ProjectMeta from '../../../components/ProjectMeta.astro';
+import TextBlock from '../../../components/TextBlock.astro';
+import ImageFullBleed from '../../../components/ImageFullBleed.astro';
+import GridFull from '../../../components/GridFull.astro';
+import ImageCarouselWithText from '../../../components/ImageCarouselWithText.astro';
+import projects from '../../../data/projects.yaml';
+
+const project = projects['guardias-da-resistencia-podcast'];
+const socialSlides = project.social;
+---
+
+<BaseLayout title={project.title}>
+  <ProjectHero imageUrl={project.hero} title={project.title} />
+  <TextBlock heading="" text="A podcast about exploring memory as a form of cultural insurgency. Connecting people through memory, regional archives and counter-archives. Recorded in Portuguese." />
+  <ProjectMeta client={project.client} toolkit={project.toolkit} />
+  <ImageFullBleed imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/5F46rpK4TtCqATK0ZQoJUk/ddcdfc9c717ec13b0a0bf7ef15fcb2ce/Guardia__s_da_Resiste__ncia_____Social.png" />
+  <GridFull
+    image1Url="https://images.ctfassets.net/2orm8gd3ce6v/6svsoq2boGHVweOtnfsHBU/74848f5ad75d34df32442eb8bdbf7a63/Guardia__s_da_Resiste__ncia_____Phone.png"
+    image2Url="https://images.ctfassets.net/2orm8gd3ce6v/5w9R44IlZuaENJoxLv1q7l/51f011226b2de0b568dd48cf473a17d4/Guardia__s_da_Resiste__ncia_____Podcast_Covers.png"
+  />
+  <ImageFullBleed imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/6fMKpU6T3cKoXkiiigGBiL/a023433428af6149cdb1a88b5b94033f/Guardia__s_da_Resiste__ncia_____Colors.png" />
+  <GridFull
+    image1Url="https://images.ctfassets.net/2orm8gd3ce6v/3xVxjNjj51aCUtmcIkvvJA/9c6147fa8ef5b2f840afd95cf63e827f/guardias-da-resistencia-podcast-symbol.png"
+    image2Url="https://images.ctfassets.net/2orm8gd3ce6v/7CnuSnhEoOpgjDmOgGmIZ/4c8a93bab76ff4cf350edf76d2b9923c/guardias-da-resistencia-podcast-wordmark.png"
+  />
+  <ImageCarouselWithText
+    slides={socialSlides}
+    heading="Social"
+    description="Template for projects featured in the podcast."
+    perPage={3}
+  />
+</BaseLayout>

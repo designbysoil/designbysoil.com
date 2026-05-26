@@ -1,0 +1,18 @@
+---
+interface Props {
+  imageUrl: string;
+}
+
+const { imageUrl } = Astro.props;
+---
+
+<section class="section">
+  <div class="block-image">
+    <img
+      src={imageUrl}
+      sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 91vw"
+      srcset={`${imageUrl}?fl=progressive&q=90&w=500 500w, ${imageUrl}?fl=progressive&q=90&w=800 800w, ${imageUrl}?fl=progressive&q=90&w=1080 1080w, ${imageUrl} 1318w`}
+      alt=""
+    />
+  </div>
+</section>

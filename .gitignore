@@ -1,10 +1,19 @@
+# Astro
+dist/
+.astro/
+node_modules/
+
+# Jekyll (legacy)
 _site
 .sass-cache
 .jekyll-metadata
 .jekyll-cache
 .bundle
 vendor
+
+# OS
 .DS_Store
+
+# Dependencies
 Gemfile.lock
-node_modules
-build
+package-lock.json

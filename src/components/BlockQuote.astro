@@ -1,0 +1,13 @@
+---
+interface Props {
+  quote: string;
+  by: string;
+}
+
+const { quote, by } = Astro.props;
+---
+
+<section class="section">
+  <div class="quote">{quote}</div>
+  <div class="by">{by}</div>
+</section>

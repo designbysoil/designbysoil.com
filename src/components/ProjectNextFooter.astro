@@ -1,0 +1,241 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  color: string;
+}
+const { title, url, color } = Astro.props;
+---
+
+<div class="project-back-to-top-bar">
+  <div class="project-back-to-top-bar__inner">
+    <a href="#top" class="project-next-footer__back-to-top">
+      Back to top
+      <svg width="18" height="22" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M14 36V4M14 4L1 17M14 4L27 17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<div class="project-next-footer-wrapper">
+  <div class="project-next-footer">
+    <div class="project-next-footer__left">
+      <div class="project-next-footer__arrow" aria-hidden="true">
+        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 0V32M14 32L1 19M14 32L27 19" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="project-next-footer__contact">
+        <div>Work of Abdul Rehman Khawar<br><a href="mailto:mail@designbysoil.com?subject=Hey%20Ark%21%20I%20got%20a%20question%20for%20you.">mail@designbysoil.com</a></div>
+      </div>
+    </div>
+
+    <a href={url} class="project-next-footer__next">
+      <div class="project-next-footer__label">Next<br>Project</div>
+      <div class="project-next-footer__title" style={`color: ${color}`}>{title}</div>
+    </a>
+
+    <div class="project-next-footer__social">
+      <a href="https://ca.linkedin.com/in/abdulrehman">LinkedIn</a>
+      <a href="https://www.instagram.com/designbysoil/">Instagram</a>
+      <a href="https://savee.it/designbysoil/">Savee</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .project-next-footer-wrapper {
+    background: #1e1e1e;
+    color: #ecf0f3;
+    position: sticky;
+    bottom: 0;
+    z-index: 0;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .project-back-to-top-bar {
+    background: #161616;
+    color: #ecf0f3;
+    position: relative;
+    z-index: 1;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .project-back-to-top-bar__inner {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .project-next-footer__back-to-top {
+    grid-column: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(16px, 2.08vw, 30px);
+    color: #ecf0f3;
+    opacity: 0.5;
+    border-bottom: none;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-next-footer__back-to-top:hover {
+    opacity: 1;
+  }
+
+  .project-next-footer {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    min-height: 72vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .project-next-footer__left {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .project-next-footer__arrow {
+    color: #ecf0f3;
+    opacity: 0.5;
+  }
+
+  .project-next-footer__contact {
+    font-size: clamp(16px, 2.08vw, 30px);
+    line-height: 1.5;
+  }
+
+  .project-next-footer__contact a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .project-next-footer a {
+    border-bottom: none;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .project-next-footer__contact a {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .project-next-footer__next {
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
+    text-align: left;
+    align-self: start;
+  }
+
+  .project-next-footer__next:hover .project-next-footer__title {
+    opacity: 0.8;
+  }
+
+  .project-next-footer__label {
+    font-size: clamp(28px, 3.47vw, 50px);
+    line-height: 1.15;
+    font-weight: 400;
+    color: #ecf0f3;
+  }
+
+  .project-next-footer__title {
+    font-size: clamp(28px, 3.47vw, 50px);
+    line-height: 1.15;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-next-footer__social {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    font-size: clamp(16px, 2.08vw, 30px);
+    align-self: end;
+  }
+
+  .project-next-footer__social a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .project-next-footer__social a:hover {
+    opacity: 0.6;
+  }
+
+  @media screen and (max-width: 991px) {
+    .project-back-to-top-bar,
+    .project-next-footer-wrapper {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .project-back-to-top-bar__inner {
+      display: flex;
+    }
+
+    .project-next-footer__back-to-top {
+      grid-column: unset;
+    }
+
+    .project-next-footer {
+      display: flex;
+      flex-direction: column;
+      min-height: unset;
+      gap: 60px;
+    }
+
+    .project-next-footer__next {
+      order: 1;
+      text-align: left;
+    }
+
+    .project-next-footer__left {
+      order: 2;
+    }
+
+    .project-next-footer__social {
+      order: 3;
+      grid-column: unset;
+      justify-content: flex-start;
+      align-self: auto;
+    }
+
+    .project-next-footer__arrow {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .project-back-to-top-bar,
+    .project-next-footer-wrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .project-next-footer {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      gap: 40px;
+    }
+  }
+</style>

@@ -9,6 +9,7 @@ import ImageSlideshow from '../../../components/ImageSlideshow.astro';
 import ImageCarousel from '../../../components/ImageCarousel.astro';
 import ImageCentered from '../../../components/ImageCentered.astro';
 import GridFullCenter from '../../../components/GridFullCenter.astro';
+import ProjectNextFooter from '../../../components/ProjectNextFooter.astro';
 
 const project = projects.credcat;
 ---
@@ -31,4 +32,5 @@ const project = projects.credcat;
   <ImageCentered imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/6XFbxjjTXkBDfpntOYASdt/b81a0c9c3e49cbbadeedd1ab97f3c8d0/credcat-project-detail.jpg" />
   <ImageSlideshow slides={project.wireframes} align="bottom" imageClass="border-radius--8-8-0-0" />
   <ImageFullBleed imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/3LuUnSpxeh6cZ5zl6BD3sY/83d9fdbe8821e9828e65363c6e770a24/meedan-credcat-tablet-project-page.jpg" />
+  <ProjectNextFooter slot="footer" title={projects['presentation-meedan-team-survey-results'].title} url={projects['presentation-meedan-team-survey-results'].page} color={projects['presentation-meedan-team-survey-results'].color} />
 </BaseLayout>

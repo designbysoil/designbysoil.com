@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectNextFooter from '../../../components/ProjectNextFooter.astro';
 import ProjectHero from '../../../components/ProjectHero.astro';
 import ProjectMeta from '../../../components/ProjectMeta.astro';
 import TextBlock from '../../../components/TextBlock.astro';
@@ -30,4 +31,5 @@ const coversSlides = project.covers;
     description="Template for projects featured in the podcast."
     perPage={3}
   />
+  <ProjectNextFooter slot="footer" title={projects['qf'].title} url={projects['qf'].page} color={projects['qf'].color} />
 </BaseLayout>

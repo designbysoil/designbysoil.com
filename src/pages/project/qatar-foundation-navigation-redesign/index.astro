@@ -10,6 +10,7 @@ import GridFullCenter from '../../../components/GridFullCenter.astro';
 import ImageCarousel from '../../../components/ImageCarousel.astro';
 import ImageSlideshow from '../../../components/ImageSlideshow.astro';
 import FullBleedSlideshow from '../../../components/FullBleedSlideshow.astro';
+import ProjectNextFooter from '../../../components/ProjectNextFooter.astro';
 
 const project = projects.qf;
 const research_slides = project.research;
@@ -54,4 +55,5 @@ const display_slides = project.display;
     fullImageUrl="https://images.ctfassets.net/2orm8gd3ce6v/s1OLI4dPoGh6Fjw4ipko4/e594afb2da7ebc614456c98fe8d8ba32/QF_Community.jpg"
     centerImageUrl="https://images.ctfassets.net/2orm8gd3ce6v/4JEwoA0CXr44qqE2LU66WV/e6231f05854f593e8f00b72d02d25131/qf.org.qa_navigation_mobile_community.png"
   />
+  <ProjectNextFooter slot="footer" title={projects.healthdesk.title} url={projects.healthdesk.page} color={projects.healthdesk.color} />
 </BaseLayout>

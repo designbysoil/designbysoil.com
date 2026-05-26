@@ -1,5 +1,5 @@
 qf:
-  title: 'Qatar Foundation –– Navigation redesign'
+  title: 'Qatar Foundation — Navigation redesign'
   color: '#FDF0BA'
   hero: 'https://images.ctfassets.net/2orm8gd3ce6v/4nfNRASGXqdXvDacIbUrhb/f792fc9aaad4c23d9b822bef5120c305/qf-nav-redesign-hero.png'
   thumbnail: 'https://images.ctfassets.net/2orm8gd3ce6v/avllZSMASu0fW2AjJQ6Rc/16e9e0938d593c31617dec1fd4d667aa/QF_Education.jpg'
@@ -22,7 +22,7 @@ qf:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/2P5HANNSZhxZDV3w7yOuTC/917e0686ffc44352794f2d97651a2874/qf-nav-redesign-education-apple-display.png'
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/4D3LHaauv1dpribX4zwJCl/00bf3abae71b0fe0f8f1864b5f4781a1/qf-nav-redesign-education-apple-display-dark.png'
 healthdesk:
-  title: 'Meedan –– Health Desk'
+  title: 'Meedan — Health Desk'
   color: '#FFD9A8'
   hero: 'https://images.ctfassets.net/2orm8gd3ce6v/6izup59g4BEiSZMactzsi0/a894c3f2f9b367259a9b31e93cf117d4/health-desk-hero.png'
   thumbnail: 'https://images.ctfassets.net/2orm8gd3ce6v/6QaJBneEp0Ohno3O87u1SM/825eb40d13d2278d5a29dc3e7837d178/healthdesk-homepage-v2.jpg'
@@ -56,7 +56,7 @@ misinfodemia:
   client: 'Meedan'
   toolkit: 'Branding and Identity, Web Design'
 credcat:
-  title: 'Meedan –– Credibility Catalog'
+  title: 'Meedan — Credibility Catalog'
   color: '#BAFCFF'
   hero: 'https://images.ctfassets.net/2orm8gd3ce6v/1Y2Myo50TvhpRh1aZiwfH9/f6a35e9161d6ac6d4f1afe5f9cf0870c/meedan-credcat-hero.png'
   thumbnail: 'https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg'
@@ -83,7 +83,7 @@ credcat:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/7Mb0VayTXBCBcFIWgekHrn/8ecc8918d76edc9b1543f234a29f37c1/Credibility_Catalog_-_Wireframes_-_4.jpg'
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/XX1yVNqYphO0RGmQhci8s/f0c16a768653e5293c4c818cde3b46ab/Credibility_Catalog_-_Wireframes_-_5.jpg'
 presentation-meedan-team-survey-results:
-  title: 'Meedan –– Team Survey Results'
+  title: 'Meedan — Team Survey Results'
   color: '#FFEBC5'
   hero: 'https://images.ctfassets.net/2orm8gd3ce6v/6Z5ialVpkctwaD2pMCpICU/0a9b348db29852e9a799b6d9e000b396/meedan_team-survery-results.png'
   thumbnail: 'https://images.ctfassets.net/2orm8gd3ce6v/6jH8N2v2vFfG5Hl8on50oh/df6cd4173eed455415b6902b2a87bf14/meedan-team-survey-results-presentation_t.png'

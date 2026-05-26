@@ -8,6 +8,14 @@ const { title, url, color } = Astro.props;
 ---
 
 <div class="project-next-footer-wrapper">
+  <div class="project-next-footer-top">
+    <a href="#top" class="project-next-footer__back-to-top">
+      Back to top
+      <svg width="18" height="22" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M14 36V4M14 4L1 17M14 4L27 17" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
   <div class="project-next-footer">
     <div class="project-next-footer__left">
       <div class="project-next-footer__arrow" aria-hidden="true">
@@ -43,6 +51,33 @@ const { title, url, color } = Astro.props;
     z-index: 0;
     padding-left: 60px;
     padding-right: 60px;
+  }
+
+  .project-next-footer-top {
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(236, 240, 243, 0.15);
+  }
+
+  .project-next-footer__back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: clamp(16px, 2.08vw, 30px);
+    color: #ecf0f3;
+    opacity: 0.5;
+    border-bottom: none;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .project-next-footer__back-to-top:hover {
+    opacity: 1;
   }
 
   .project-next-footer {

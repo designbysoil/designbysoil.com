@@ -2,12 +2,18 @@
 ---
 
 <div class="hero-art" aria-hidden="true">
-  <div class="hero-art__shape hero-art__rect hero-art__rect--orange"></div>
-  <div class="hero-art__shape hero-art__circle hero-art__circle--right"></div>
-  <div class="hero-art__shape hero-art__rect hero-art__rect--pink"></div>
-  <div class="hero-art__shape hero-art__rect hero-art__rect--blue"></div>
-  <div class="hero-art__shape hero-art__circle hero-art__circle--lower"></div>
-  <div class="hero-art__shape hero-art__circle hero-art__circle--upper"></div>
+  <div class="hero-art__pair hero-art__pair--1">
+    <div class="hero-art__shape hero-art__rect hero-art__rect--orange"></div>
+    <div class="hero-art__shape hero-art__circle hero-art__circle--right"></div>
+  </div>
+  <div class="hero-art__pair hero-art__pair--2">
+    <div class="hero-art__shape hero-art__rect hero-art__rect--pink"></div>
+    <div class="hero-art__shape hero-art__circle hero-art__circle--upper"></div>
+  </div>
+  <div class="hero-art__pair hero-art__pair--3">
+    <div class="hero-art__shape hero-art__rect hero-art__rect--blue"></div>
+    <div class="hero-art__shape hero-art__circle hero-art__circle--lower"></div>
+  </div>
 </div>
 
 <style>
@@ -17,6 +23,16 @@
     aspect-ratio: 854 / 866;
     overflow: visible;
   }
+
+  .hero-art__pair {
+    position: absolute;
+    inset: 0;
+    animation: pair-rotate 8s cubic-bezier(0.85, 0, 0.15, 1) infinite;
+  }
+
+  .hero-art__pair--1 { transform-origin: 75.4% 26.7%; }
+  .hero-art__pair--2 { transform-origin: 29% 31%;     animation-delay: -0.5s; }
+  .hero-art__pair--3 { transform-origin: 64.9% 75.9%; animation-delay: -1s; }
 
   .hero-art__shape {
     position: absolute;
@@ -29,12 +45,12 @@
     opacity: 1;
   }
 
-  .hero-art__shape:nth-child(1) { transition-delay: 0.2s; }
-  .hero-art__shape:nth-child(2) { transition-delay: 0.35s; }
-  .hero-art__shape:nth-child(3) { transition-delay: 0.5s; }
-  .hero-art__shape:nth-child(4) { transition-delay: 0.65s; }
-  .hero-art__shape:nth-child(5) { transition-delay: 0.8s; }
-  .hero-art__shape:nth-child(6) { transition-delay: 0.95s; }
+  .hero-art__rect--orange  { transition-delay: 0.20s; }
+  .hero-art__circle--right { transition-delay: 0.35s; }
+  .hero-art__rect--pink    { transition-delay: 0.50s; }
+  .hero-art__circle--upper { transition-delay: 0.65s; }
+  .hero-art__rect--blue    { transition-delay: 0.80s; }
+  .hero-art__circle--lower { transition-delay: 0.95s; }
 
   .hero-art__circle {
     border-radius: 50%;
@@ -54,8 +70,6 @@
     left: 69.9%;
     top: 19.1%;
     rotate: -148deg;
-    z-index: 3;
-    animation: wobble-orange 24s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__circle--right {
@@ -64,8 +78,6 @@
     left: 80.9%;
     top: 34.3%;
     rotate: 95.67deg;
-    z-index: 1;
-    animation: wobble-right 24s -4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__rect--pink {
@@ -75,8 +87,6 @@
     left: 21.7%;
     top: 26.9%;
     rotate: 135.74deg;
-    z-index: 2;
-    animation: wobble-pink 24s -8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__rect--blue {
@@ -86,8 +96,6 @@
     left: 71.0%;
     top: 78.4%;
     rotate: -102.09deg;
-    z-index: 4;
-    animation: wobble-blue 24s -12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__circle--lower {
@@ -96,8 +104,6 @@
     left: 58.7%;
     top: 73.4%;
     rotate: 24.88deg;
-    z-index: 5;
-    animation: wobble-lower 24s -16s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__circle--upper {
@@ -106,83 +112,19 @@
     left: 36.4%;
     top: 35.3%;
     rotate: -179.24deg;
-    z-index: 6;
-    animation: wobble-upper 24s -20s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
-  @keyframes wobble-orange {
-    0%    { left: 69.9%; top: 19.1%; rotate: -148deg; z-index: 3; }
-    12.5% { left: 71.5%; top: 17.5%; rotate: -158deg; }
-    25%   { left: 72.5%; top: 18.5%; rotate: -165deg; z-index: 5; }
-    37.5% { left: 71.5%; top: 21%;   rotate: -160deg; }
-    50%   { left: 70%;   top: 22.5%; rotate: -148deg; z-index: 2; }
-    62.5% { left: 68%;   top: 21%;   rotate: -136deg; }
-    75%   { left: 67.5%; top: 19.5%; rotate: -132deg; z-index: 6; }
-    87.5% { left: 68.5%; top: 19%;   rotate: -140deg; }
-    100%  { left: 69.9%; top: 19.1%; rotate: -148deg; z-index: 3; }
-  }
-
-  @keyframes wobble-right {
-    0%    { left: 80.9%; top: 34.3%; rotate: 95.67deg; z-index: 1; }
-    12.5% { left: 79%;   top: 32%;   rotate: 85deg; }
-    25%   { left: 77.5%; top: 34%;   rotate: 78deg;   z-index: 4; }
-    37.5% { left: 78%;   top: 36.5%; rotate: 88deg; }
-    50%   { left: 80%;   top: 37%;   rotate: 100deg;  z-index: 6; }
-    62.5% { left: 82%;   top: 36%;   rotate: 110deg; }
-    75%   { left: 83%;   top: 34%;   rotate: 115deg;  z-index: 3; }
-    87.5% { left: 82%;   top: 33%;   rotate: 105deg; }
-    100%  { left: 80.9%; top: 34.3%; rotate: 95.67deg; z-index: 1; }
-  }
-
-  @keyframes wobble-pink {
-    0%    { left: 21.7%; top: 26.9%; rotate: 135.74deg; z-index: 2; }
-    12.5% { left: 23%;   top: 25%;   rotate: 145deg; }
-    25%   { left: 24.5%; top: 26%;   rotate: 150deg;    z-index: 6; }
-    37.5% { left: 24%;   top: 28.5%; rotate: 142deg; }
-    50%   { left: 22%;   top: 29.5%; rotate: 132deg;    z-index: 3; }
-    62.5% { left: 20%;   top: 28.5%; rotate: 124deg; }
-    75%   { left: 19%;   top: 27%;   rotate: 120deg;    z-index: 5; }
-    87.5% { left: 20%;   top: 26.5%; rotate: 128deg; }
-    100%  { left: 21.7%; top: 26.9%; rotate: 135.74deg; z-index: 2; }
-  }
-
-  @keyframes wobble-blue {
-    0%    { left: 71%;   top: 78.4%; rotate: -102.09deg; z-index: 4; }
-    12.5% { left: 72.5%; top: 76.5%; rotate: -112deg; }
-    25%   { left: 73.5%; top: 77.5%; rotate: -118deg;    z-index: 2; }
-    37.5% { left: 73%;   top: 79.5%; rotate: -110deg; }
-    50%   { left: 71.5%; top: 80.5%; rotate: -100deg;    z-index: 5; }
-    62.5% { left: 69.5%; top: 80%;   rotate: -92deg; }
-    75%   { left: 68.5%; top: 78.5%; rotate: -88deg;     z-index: 1; }
-    87.5% { left: 69.5%; top: 78%;   rotate: -96deg; }
-    100%  { left: 71%;   top: 78.4%; rotate: -102.09deg; z-index: 4; }
-  }
-
-  @keyframes wobble-lower {
-    0%    { left: 58.7%; top: 73.4%; rotate: 24.88deg; z-index: 5; }
-    12.5% { left: 60.5%; top: 71.5%; rotate: 34deg; }
-    25%   { left: 61.5%; top: 72.5%; rotate: 40deg;    z-index: 3; }
-    37.5% { left: 60.5%; top: 74.5%; rotate: 32deg; }
-    50%   { left: 59%;   top: 75.5%; rotate: 22deg;    z-index: 1; }
-    62.5% { left: 57%;   top: 75%;   rotate: 14deg; }
-    75%   { left: 56%;   top: 73.5%; rotate: 10deg;    z-index: 4; }
-    87.5% { left: 57%;   top: 73%;   rotate: 18deg; }
-    100%  { left: 58.7%; top: 73.4%; rotate: 24.88deg; z-index: 5; }
-  }
-
-  @keyframes wobble-upper {
-    0%    { left: 36.4%; top: 35.3%; rotate: -179.24deg; z-index: 6; }
-    12.5% { left: 37.5%; top: 33%;   rotate: -190deg; }
-    25%   { left: 39%;   top: 34%;   rotate: -195deg;    z-index: 1; }
-    37.5% { left: 38.5%; top: 36.5%; rotate: -188deg; }
-    50%   { left: 37%;   top: 37.5%; rotate: -180deg;    z-index: 4; }
-    62.5% { left: 35%;   top: 36.5%; rotate: -170deg; }
-    75%   { left: 34%;   top: 35%;   rotate: -165deg;    z-index: 2; }
-    87.5% { left: 35%;   top: 34.5%; rotate: -174deg; }
-    100%  { left: 36.4%; top: 35.3%; rotate: -179.24deg; z-index: 6; }
+  @keyframes pair-rotate {
+    0%, 20%   { rotate: 0deg; }
+    35%, 55%  { rotate: 180deg; }
+    70%, 95%  { rotate: 360deg; }
+    100%      { rotate: 360deg; }
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .hero-art__pair {
+      animation: none !important;
+    }
     .hero-art__shape {
       animation: none !important;
       opacity: 1 !important;

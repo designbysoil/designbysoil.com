@@ -7,8 +7,8 @@ interface Props {
 const { title, url, color } = Astro.props;
 ---
 
-<div class="project-next-footer-wrapper">
-  <div class="project-next-footer-top">
+<div class="project-back-to-top-bar">
+  <div class="project-back-to-top-bar__inner">
     <a href="#top" class="project-next-footer__back-to-top">
       Back to top
       <svg width="18" height="22" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -16,6 +16,9 @@ const { title, url, color } = Astro.props;
       </svg>
     </a>
   </div>
+</div>
+
+<div class="project-next-footer-wrapper">
   <div class="project-next-footer">
     <div class="project-next-footer__left">
       <div class="project-next-footer__arrow" aria-hidden="true">
@@ -53,7 +56,16 @@ const { title, url, color } = Astro.props;
     padding-right: 60px;
   }
 
-  .project-next-footer-top {
+  .project-back-to-top-bar {
+    background: #161616;
+    color: #ecf0f3;
+    position: relative;
+    z-index: 1;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .project-back-to-top-bar__inner {
     max-width: 1220px;
     margin-left: auto;
     margin-right: auto;
@@ -169,6 +181,7 @@ const { title, url, color } = Astro.props;
   }
 
   @media screen and (max-width: 991px) {
+    .project-back-to-top-bar,
     .project-next-footer-wrapper {
       padding-left: 40px;
       padding-right: 40px;
@@ -198,6 +211,7 @@ const { title, url, color } = Astro.props;
   }
 
   @media screen and (max-width: 767px) {
+    .project-back-to-top-bar,
     .project-next-footer-wrapper {
       padding-left: 20px;
       padding-right: 20px;

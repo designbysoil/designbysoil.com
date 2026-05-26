@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import projects from '../../data/projects.yaml';
+---
+
+<BaseLayout title="Designbysoil – Work of Abdul Rehman Khawar">
+  <section class="section">
+    <div class="project-grid">
+      {Object.entries(projects).map(([key, project]: [string, any]) => (
+        <div>
+          <a href={project.page}>
+            <img src={`${project.thumbnail}?w=1000&h=1000${project.crop === 'faces' ? '&fit=crop&f=faces' : ''}`} />
+            <h3 style={`color:${project.color} !important;`}>{project.title}</h3>
+            <div class="small">{project.toolkit}</div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

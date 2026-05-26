@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import projects from '../../../data/projects.yaml';
+import ProjectHero from '../../../components/ProjectHero.astro';
+import ProjectMeta from '../../../components/ProjectMeta.astro';
+import TextBlock from '../../../components/TextBlock.astro';
+import ImageFullBleed from '../../../components/ImageFullBleed.astro';
+import ImageSlideshow from '../../../components/ImageSlideshow.astro';
+import ImageCarousel from '../../../components/ImageCarousel.astro';
+import ImageCentered from '../../../components/ImageCentered.astro';
+import GridFullCenter from '../../../components/GridFullCenter.astro';
+
+const project = projects.credcat;
+---
+
+<BaseLayout title="Meedan –– Credibility Catalog">
+  <ProjectHero imageUrl={project.hero} title="Meedan –– Credibility Catalog" />
+  <TextBlock heading="Challenge" text="Meedan, together with Hacks/Hackers, wanted to develop an interactive tool to support initiatives working to improve information quality. Using the tool, potential funders, researchers and practitioners needed to filter credibility initiatives from around the world by contextual factors like language and region. Plus what approaches the initiatives were using to combat misinformation." />
+  <ProjectMeta client={project.client} toolkit={project.toolkit} />
+  <ImageFullBleed imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/2ywkbnSuZ0RWb8zxaFCOOX/1b1d76612465532d6cc724a5aae4e24a/meedan-credcat-macbook.jpg" />
+  <ImageSlideshow slides={project.case} />
+  <TextBlock heading="Solution" text="Started with wireframes to develop a way to visualize the initiatives based on the four areas of focus as well as across regions and languages. Each initiative would be represented as four blocks of color mapped to its area of focus. The design needed to be engaging yet straightforward, enabling users from varied backgrounds to easily comprehend and extract valuable insights from the data." />
+  <ImageCarousel slides={project.documentation} />
+  <ImageCentered imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/77ExpNxdUyVu93d4V1c5Tp/c0ca787260f1843dc79057359a52b667/CredMap_Projects_____Filter_Bar_-_Comparison_View.png" align="bottom" imageClass="border-radius--8-8-0-0" />
+  <GridFullCenter
+    fullImageUrl="https://images.ctfassets.net/2orm8gd3ce6v/O9hki6YmlVIgzJ0791wkA/6630cad51c4f2ca1ed0e9b515888caa2/credcat-conf.jpg"
+    centerImageUrl="https://images.ctfassets.net/2orm8gd3ce6v/6YzquBOLm1AxgHkEqjyeE6/183ec745695a2e133fa1b43248ebfdad/Filter_Dropdown__Areas_of_focus.png"
+    background="#4C4CFF"
+    credit="Photo: Steven Snow for CredCon"
+  />
+  <ImageCentered imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/6XFbxjjTXkBDfpntOYASdt/b81a0c9c3e49cbbadeedd1ab97f3c8d0/credcat-project-detail.jpg" />
+  <ImageSlideshow slides={project.wireframes} align="bottom" imageClass="border-radius--8-8-0-0" />
+  <ImageFullBleed imageUrl="https://images.ctfassets.net/2orm8gd3ce6v/3LuUnSpxeh6cZ5zl6BD3sY/83d9fdbe8821e9828e65363c6e770a24/meedan-credcat-tablet-project-page.jpg" />
+</BaseLayout>

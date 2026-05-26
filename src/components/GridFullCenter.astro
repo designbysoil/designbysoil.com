@@ -1,0 +1,36 @@
+---
+interface Props {
+  fullImageUrl: string;
+  centerImageUrl: string;
+  background?: string;
+  reversed?: boolean;
+  credit?: string;
+}
+
+const { fullImageUrl, centerImageUrl, background, reversed, credit } = Astro.props;
+
+const darkStyle = [
+  reversed ? "order: -1;" : "",
+  background ? `background-color: ${background} !important;` : "",
+].filter(Boolean).join(" ");
+---
+
+<section class="section">
+  <div class="block-grid">
+    <div class="block-image">
+      <img
+        src={fullImageUrl}
+        alt=""
+        sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 44vw"
+        srcset={`${fullImageUrl}?fl=progressive&q=90&w=500 500w, ${fullImageUrl} 645w`}
+        class="image"
+      />
+    </div>
+    <div class="block-image dark" style={darkStyle || undefined}>
+      <div class="black-image-center">
+        <img src={centerImageUrl} alt="" />
+      </div>
+    </div>
+  </div>
+  {credit && <div class="credit">{credit}</div>}
+</section>

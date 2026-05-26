@@ -78,12 +78,26 @@ const { title } = Astro.props;
 
 <script>
   function initRevealAnimations() {
-    const sections = document.querySelectorAll('.page-wrapper > section, .page-wrapper > section .block-grid > *, .page-wrapper > section .project-grid > *, .page-wrapper > section .project-list > a, .page-wrapper > section .grid-list');
+    const staggerContainers = '.block-grid, .project-grid, .project-list, .grid-list';
+    const staggerChildren = document.querySelectorAll(
+      '.page-wrapper > section .block-grid > *, ' +
+      '.page-wrapper > section .project-grid > *, ' +
+      '.page-wrapper > section .project-list > a, ' +
+      '.page-wrapper > section .grid-list'
+    );
 
-    sections.forEach((el) => {
+    // Sections without stagger children get their own reveal
+    document.querySelectorAll('.page-wrapper > section').forEach((section) => {
+      if (!section.querySelector(staggerContainers)) {
+        section.classList.add('reveal');
+      }
+    });
+
+    staggerChildren.forEach((el) => {
       el.classList.add('reveal');
     });
 
+    const allRevealElements = document.querySelectorAll('.reveal');
     const header = document.querySelector('.header-wrapper');
     const footer = document.querySelector('.footer-wrapper');
 
@@ -93,14 +107,13 @@ const { title } = Astro.props;
           if (entry.isIntersecting) {
             const el = entry.target as HTMLElement;
 
-            // Find stagger index among visible siblings
             const parent = el.parentElement;
             if (parent) {
               const siblings = Array.from(parent.children).filter((c) =>
                 c.classList.contains('reveal')
               );
               const index = siblings.indexOf(el);
-              const staggerDelay = index * 0.07;
+              const staggerDelay = index * 0.12;
               el.style.transitionDelay = `${staggerDelay}s`;
             }
 
@@ -115,7 +128,7 @@ const { title } = Astro.props;
       }
     );
 
-    sections.forEach((el) => observer.observe(el));
+    allRevealElements.forEach((el) => observer.observe(el));
 
     // Header reveals immediately on load
     if (header) {

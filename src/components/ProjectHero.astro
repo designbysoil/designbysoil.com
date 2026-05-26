@@ -1,4 +1,6 @@
 ---
+import BlurImage from './BlurImage.astro';
+
 interface Props {
   imageUrl: string;
   title: string;
@@ -9,11 +11,11 @@ const { imageUrl, title } = Astro.props;
 
 <section class="section">
   <h1 class="heading center">{title}</h1>
-  <img
+  <BlurImage
     src={imageUrl}
     sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 91vw"
     srcset={`${imageUrl}?fl=progressive&q=90&w=500 500w, ${imageUrl}?fl=progressive&q=90&w=800 800w, ${imageUrl}?fl=progressive&q=90&w=1080 1080w, ${imageUrl} 1318w`}
-    alt=""
-    class="project-hero margin-top-60"
+    class="margin-top-60"
+    loading="eager"
   />
 </section>

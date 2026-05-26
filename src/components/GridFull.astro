@@ -1,4 +1,6 @@
 ---
+import BlurImage from './BlurImage.astro';
+
 interface Props {
   image1Url: string;
   image2Url: string;
@@ -11,18 +13,16 @@ const { image1Url, image2Url, credit } = Astro.props;
 <section class="section">
   <div class="block-grid">
     <div class="block-image">
-      <img
+      <BlurImage
         src={image1Url}
-        alt=""
         sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 44vw"
         srcset={`${image1Url}?fl=progressive&q=90&w=500 500w, ${image1Url} 645w`}
         class="image"
       />
     </div>
     <div class="block-image">
-      <img
+      <BlurImage
         src={image2Url}
-        alt=""
         sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 44vw"
         srcset={`${image2Url}?fl=progressive&q=90&w=500 500w, ${image2Url} 645w`}
         class="image"

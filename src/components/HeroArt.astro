@@ -1,7 +1,4 @@
 ---
-// Abstract geometric composition — each shape is independently animatable
-// Uses individual transform properties (translate, rotate, scale) so
-// entrance transitions and float animations don't conflict.
 ---
 
 <div class="hero-art" aria-hidden="true">
@@ -23,7 +20,7 @@
 
   .hero-art__shape {
     position: absolute;
-    will-change: translate, opacity;
+    translate: -50% -50%;
     opacity: 0;
     transition: opacity 2s ease;
   }
@@ -57,8 +54,8 @@
     left: 69.9%;
     top: 19.1%;
     rotate: -148deg;
-    translate: -50% -50%;
-    animation: float-1 9s ease-in-out infinite;
+    z-index: 3;
+    animation: wobble-orange 24s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__circle--right {
@@ -67,8 +64,8 @@
     left: 80.9%;
     top: 34.3%;
     rotate: 95.67deg;
-    translate: -50% -50%;
-    animation: float-2 11s ease-in-out infinite;
+    z-index: 1;
+    animation: wobble-right 24s -4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__rect--pink {
@@ -78,8 +75,8 @@
     left: 21.7%;
     top: 26.9%;
     rotate: 135.74deg;
-    translate: -50% -50%;
-    animation: float-3 10s ease-in-out infinite;
+    z-index: 2;
+    animation: wobble-pink 24s -8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__rect--blue {
@@ -89,8 +86,8 @@
     left: 71.0%;
     top: 78.4%;
     rotate: -102.09deg;
-    translate: -50% -50%;
-    animation: float-4 8s ease-in-out infinite;
+    z-index: 4;
+    animation: wobble-blue 24s -12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__circle--lower {
@@ -99,8 +96,8 @@
     left: 58.7%;
     top: 73.4%;
     rotate: 24.88deg;
-    translate: -50% -50%;
-    animation: float-5 12s ease-in-out infinite;
+    z-index: 5;
+    animation: wobble-lower 24s -16s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
   .hero-art__circle--upper {
@@ -109,44 +106,80 @@
     left: 36.4%;
     top: 35.3%;
     rotate: -179.24deg;
-    translate: -50% -50%;
-    animation: float-6 13s ease-in-out infinite;
+    z-index: 6;
+    animation: wobble-upper 24s -20s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   }
 
-  @keyframes float-1 {
-    0%, 100% { translate: -50% -50%; }
-    33% { translate: calc(-50% + 8px) calc(-50% - 10px); }
-    66% { translate: calc(-50% - 6px) calc(-50% + 5px); }
+  @keyframes wobble-orange {
+    0%    { left: 69.9%; top: 19.1%; rotate: -148deg; z-index: 3; }
+    12.5% { left: 71.5%; top: 17.5%; rotate: -158deg; }
+    25%   { left: 72.5%; top: 18.5%; rotate: -165deg; z-index: 5; }
+    37.5% { left: 71.5%; top: 21%;   rotate: -160deg; }
+    50%   { left: 70%;   top: 22.5%; rotate: -148deg; z-index: 2; }
+    62.5% { left: 68%;   top: 21%;   rotate: -136deg; }
+    75%   { left: 67.5%; top: 19.5%; rotate: -132deg; z-index: 6; }
+    87.5% { left: 68.5%; top: 19%;   rotate: -140deg; }
+    100%  { left: 69.9%; top: 19.1%; rotate: -148deg; z-index: 3; }
   }
 
-  @keyframes float-2 {
-    0%, 100% { translate: -50% -50%; }
-    33% { translate: calc(-50% - 7px) calc(-50% + 9px); }
-    66% { translate: calc(-50% + 5px) calc(-50% - 4px); }
+  @keyframes wobble-right {
+    0%    { left: 80.9%; top: 34.3%; rotate: 95.67deg; z-index: 1; }
+    12.5% { left: 79%;   top: 32%;   rotate: 85deg; }
+    25%   { left: 77.5%; top: 34%;   rotate: 78deg;   z-index: 4; }
+    37.5% { left: 78%;   top: 36.5%; rotate: 88deg; }
+    50%   { left: 80%;   top: 37%;   rotate: 100deg;  z-index: 6; }
+    62.5% { left: 82%;   top: 36%;   rotate: 110deg; }
+    75%   { left: 83%;   top: 34%;   rotate: 115deg;  z-index: 3; }
+    87.5% { left: 82%;   top: 33%;   rotate: 105deg; }
+    100%  { left: 80.9%; top: 34.3%; rotate: 95.67deg; z-index: 1; }
   }
 
-  @keyframes float-3 {
-    0%, 100% { translate: -50% -50%; }
-    33% { translate: calc(-50% + 5px) calc(-50% + 8px); }
-    66% { translate: calc(-50% - 9px) calc(-50% - 6px); }
+  @keyframes wobble-pink {
+    0%    { left: 21.7%; top: 26.9%; rotate: 135.74deg; z-index: 2; }
+    12.5% { left: 23%;   top: 25%;   rotate: 145deg; }
+    25%   { left: 24.5%; top: 26%;   rotate: 150deg;    z-index: 6; }
+    37.5% { left: 24%;   top: 28.5%; rotate: 142deg; }
+    50%   { left: 22%;   top: 29.5%; rotate: 132deg;    z-index: 3; }
+    62.5% { left: 20%;   top: 28.5%; rotate: 124deg; }
+    75%   { left: 19%;   top: 27%;   rotate: 120deg;    z-index: 5; }
+    87.5% { left: 20%;   top: 26.5%; rotate: 128deg; }
+    100%  { left: 21.7%; top: 26.9%; rotate: 135.74deg; z-index: 2; }
   }
 
-  @keyframes float-4 {
-    0%, 100% { translate: -50% -50%; }
-    33% { translate: calc(-50% - 10px) calc(-50% - 7px); }
-    66% { translate: calc(-50% + 4px) calc(-50% + 9px); }
+  @keyframes wobble-blue {
+    0%    { left: 71%;   top: 78.4%; rotate: -102.09deg; z-index: 4; }
+    12.5% { left: 72.5%; top: 76.5%; rotate: -112deg; }
+    25%   { left: 73.5%; top: 77.5%; rotate: -118deg;    z-index: 2; }
+    37.5% { left: 73%;   top: 79.5%; rotate: -110deg; }
+    50%   { left: 71.5%; top: 80.5%; rotate: -100deg;    z-index: 5; }
+    62.5% { left: 69.5%; top: 80%;   rotate: -92deg; }
+    75%   { left: 68.5%; top: 78.5%; rotate: -88deg;     z-index: 1; }
+    87.5% { left: 69.5%; top: 78%;   rotate: -96deg; }
+    100%  { left: 71%;   top: 78.4%; rotate: -102.09deg; z-index: 4; }
   }
 
-  @keyframes float-5 {
-    0%, 100% { translate: -50% -50%; }
-    33% { translate: calc(-50% + 9px) calc(-50% - 5px); }
-    66% { translate: calc(-50% - 3px) calc(-50% + 11px); }
+  @keyframes wobble-lower {
+    0%    { left: 58.7%; top: 73.4%; rotate: 24.88deg; z-index: 5; }
+    12.5% { left: 60.5%; top: 71.5%; rotate: 34deg; }
+    25%   { left: 61.5%; top: 72.5%; rotate: 40deg;    z-index: 3; }
+    37.5% { left: 60.5%; top: 74.5%; rotate: 32deg; }
+    50%   { left: 59%;   top: 75.5%; rotate: 22deg;    z-index: 1; }
+    62.5% { left: 57%;   top: 75%;   rotate: 14deg; }
+    75%   { left: 56%;   top: 73.5%; rotate: 10deg;    z-index: 4; }
+    87.5% { left: 57%;   top: 73%;   rotate: 18deg; }
+    100%  { left: 58.7%; top: 73.4%; rotate: 24.88deg; z-index: 5; }
   }
 
-  @keyframes float-6 {
-    0%, 100% { translate: -50% -50%; }
-    33% { translate: calc(-50% - 6px) calc(-50% + 7px); }
-    66% { translate: calc(-50% + 10px) calc(-50% - 8px); }
+  @keyframes wobble-upper {
+    0%    { left: 36.4%; top: 35.3%; rotate: -179.24deg; z-index: 6; }
+    12.5% { left: 37.5%; top: 33%;   rotate: -190deg; }
+    25%   { left: 39%;   top: 34%;   rotate: -195deg;    z-index: 1; }
+    37.5% { left: 38.5%; top: 36.5%; rotate: -188deg; }
+    50%   { left: 37%;   top: 37.5%; rotate: -180deg;    z-index: 4; }
+    62.5% { left: 35%;   top: 36.5%; rotate: -170deg; }
+    75%   { left: 34%;   top: 35%;   rotate: -165deg;    z-index: 2; }
+    87.5% { left: 35%;   top: 34.5%; rotate: -174deg; }
+    100%  { left: 36.4%; top: 35.3%; rotate: -179.24deg; z-index: 6; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -154,7 +187,6 @@
       animation: none !important;
       opacity: 1 !important;
       transition: none !important;
-      translate: -50% -50% !important;
     }
   }
 

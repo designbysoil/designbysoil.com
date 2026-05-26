@@ -87,6 +87,12 @@
     left: 69.9%;
     top: 19.1%;
     rotate: -148deg;
+    animation-name: sdrift-orange;
+    animation-duration: 3.7s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 
   .hero-art__circle--right {
@@ -95,6 +101,12 @@
     left: 80.9%;
     top: 34.3%;
     rotate: 95.67deg;
+    animation-name: sdrift-circle-right;
+    animation-duration: 4.3s;
+    animation-delay: -1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 
   .hero-art__rect--pink {
@@ -104,6 +116,12 @@
     left: 21.7%;
     top: 26.9%;
     rotate: 135.74deg;
+    animation-name: sdrift-pink;
+    animation-duration: 3.2s;
+    animation-delay: -0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 
   .hero-art__rect--blue {
@@ -113,6 +131,12 @@
     left: 71.0%;
     top: 78.4%;
     rotate: -102.09deg;
+    animation-name: sdrift-blue;
+    animation-duration: 3.9s;
+    animation-delay: -1.1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 
   .hero-art__circle--lower {
@@ -121,6 +145,12 @@
     left: 58.7%;
     top: 73.4%;
     rotate: 24.88deg;
+    animation-name: sdrift-circle-lower;
+    animation-duration: 4.1s;
+    animation-delay: -0.4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
 
   .hero-art__circle--upper {
@@ -129,7 +159,20 @@
     left: 36.4%;
     top: 35.3%;
     rotate: -179.24deg;
+    animation-name: sdrift-circle-upper;
+    animation-duration: 4.8s;
+    animation-delay: -2.1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
   }
+
+  @keyframes sdrift-orange       { from { translate: -50% -50%; } to { translate: calc(-50% + 4%) calc(-50% - 3%); } }
+  @keyframes sdrift-circle-right { from { translate: -50% -50%; } to { translate: calc(-50% - 3%) calc(-50% + 4%); } }
+  @keyframes sdrift-pink         { from { translate: -50% -50%; } to { translate: calc(-50% - 4%) calc(-50% - 3%); } }
+  @keyframes sdrift-circle-upper { from { translate: -50% -50%; } to { translate: calc(-50% + 3%) calc(-50% + 4%); } }
+  @keyframes sdrift-blue         { from { translate: -50% -50%; } to { translate: calc(-50% + 3%) calc(-50% + 4%); } }
+  @keyframes sdrift-circle-lower { from { translate: -50% -50%; } to { translate: calc(-50% - 4%) calc(-50% + 3%); } }
 
   /* Each pair makes one full revolution per 8s cycle, but the two
      intermediate hold angles differ per pair so the trio never reads
@@ -264,6 +307,7 @@
     }
     .hero-art__shape {
       animation: none !important;
+      translate: -50% -50% !important;
       opacity: 1 !important;
       transition: none !important;
     }

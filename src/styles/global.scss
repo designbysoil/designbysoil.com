@@ -529,6 +529,10 @@ a {
     .homepage-hero {
         display: flex;
         flex-direction: column-reverse;
+
+        .homepage-hero-image {
+            align-self: stretch;
+        }
     }
 
     .header-wrapper,

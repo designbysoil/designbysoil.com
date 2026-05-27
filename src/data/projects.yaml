@@ -6,7 +6,10 @@ qf:
   crop: 'faces'
   page: '/project/qatar-foundation-navigation-redesign'
   client: 'Qatar Foundation'
-  toolkit: 'UX, UI design'
+  toolkit:
+    - Information Architecture
+    - Interaction Design
+    - UX Research
   documentation:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/4OD7IfWs8vQb4oOeVmyLH6/f22fc60d92095a55ae4c11924a6ef233/QF_Navigation_Redesign_____Research_3.jpg'
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/57f2xHqpP5uc6yMATZZxMQ/6dae6fc89d9e34927009670773e2c1a6/QF_Navigation_Redesign_____Research_4.jpg'
@@ -29,7 +32,11 @@ healthdesk:
   crop: 'center'
   page: '/project/health-desk'
   client: 'Meedan'
-  toolkit: 'Branding and Identity, UX, UI design, Design System, Jamstack, Frontend'
+  toolkit:
+    - Brand Identity
+    - Product Design
+    - Design System
+    - Frontend
 guardias-da-resistencia-podcast:
   title: 'Guardiãs da Resistência Podcast'
   color: '#E6F1FF'
@@ -38,7 +45,9 @@ guardias-da-resistencia-podcast:
   crop: 'center'
   page: '/project/guardias-da-resistencia-podcast'
   client: 'Meedan'
-  toolkit: 'Branding and Identity'
+  toolkit:
+    - Brand Identity
+    - Editorial Design
   social:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/2XFdeSlU24WNlfLg3ZsOt4/37837a0d8cd118fdfc3d7e9246ba10f7/Title.png'
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/3kn1E0yDNbihSz5E74l0re/0c6f23a008064c94f67d1976b0afacb0/Quote___Image.png'
@@ -54,7 +63,10 @@ misinfodemia:
   crop: 'center'
   page: '/project/misinfodemia'
   client: 'Meedan'
-  toolkit: 'Branding and Identity, Web Design'
+  toolkit:
+    - Brand Identity
+    - Editorial Design
+    - Web Design
 credcat:
   title: 'Meedan — Credibility Catalog'
   color: '#BAFCFF'
@@ -63,7 +75,10 @@ credcat:
   crop: 'faces'
   page: '/project/meedan-credibility-catalog'
   client: 'Meedan, Hacks/Hackers'
-  toolkit: 'UX, UI design, Jamstack, Frontend'
+  toolkit:
+    - Product Design
+    - Interaction Design
+    - Frontend
   case:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/2Q7tF4zALUArRuQlASXv92/616f6f9f17771d8d384d142281fb5f2c/Credibility_Catalog_-_case_-_1.png'
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/2bEs9rleect5lIFOEehT88/9827488209abd6801b1c60d9af845c1c/Credibility_Catalog_-_case_-_2.png'
@@ -90,7 +105,10 @@ presentation-meedan-team-survey-results:
   crop: 'center'
   page: '/project/presentation-meedan-team-survey-results'
   client: 'Meedan'
-  toolkit: 'Presentation Design, Poster'
+  toolkit:
+    - Data Visualization
+    - Editorial Design
+    - Presentation Design
   social:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/6SHR2tll3CSWet93aXkhh5/afcc6aeb08c4cb143d1776bcecde98a6/Meedan_Team_Survey_and_EDI_Results_2019-2021.jpeg'
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/7vHOkKApCX8jcz2buN3n8F/96ba72aa8e44bda3ced1e754580c80c9/Meedan_Team_Survey_Results_2019-2021_3.jpeg'
@@ -119,7 +137,11 @@ presentation-meedan-team-survey-results:
   crop: 'center'
   page: '/project/2020-misinfodemic-report'
   client: 'Meedan'
-  toolkit: 'Web Design, Illustration, Report Design'
+  toolkit:
+    - Report Design
+    - Editorial Design
+    - Illustration
+    - Web Design
   covers:
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/7n8oIAZ7xT2mFt0uJZIQii/cb838c541427fd15c30618d7142b9056/meedan_report_covid-19-kenya_africa-check_01.png'
     - image: 'https://images.ctfassets.net/2orm8gd3ce6v/2ixL6uCPWuMZ1eMj4i5qPr/96e7f2003ed6dab7fbdc2959c64d516b/meedan_report_covid-19-india_01.png'

@@ -1,21 +1,44 @@
 ---
 interface Props {
-  client: string;
-  toolkit: string;
+  toolkit: string[];
+  color?: string;
 }
 
-const { client, toolkit } = Astro.props;
+const { toolkit, color } = Astro.props;
 ---
 
 <section class="section">
-  <div class="block-grid">
-    <div class="project-meta">
-      <h2>Client</h2>
-      <div>{client}</div>
-    </div>
-    <div class="project-meta">
-      <h2>Toolkit</h2>
-      <div>{toolkit}</div>
-    </div>
+  <div class="project-meta">
+    <h2 style={color ? `color: ${color}` : ''}>Toolkit</h2>
+    <ul class="toolkit-grid">
+      {toolkit.map(tag => (
+        <li class="toolkit-item">{tag}</li>
+      ))}
+    </ul>
   </div>
 </section>
+
+<style>
+  .toolkit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toolkit-item {
+    border-top: 1px solid rgba(236, 240, 243, 0.2);
+    padding-top: 10px;
+    padding-bottom: 16px;
+    font-size: 16px;
+    color: rgba(236, 240, 243, 0.65);
+  }
+
+  @media screen and (max-width: 767px) {
+    .toolkit-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

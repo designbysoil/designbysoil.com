@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import FooterGallery from '../../components/FooterGallery.astro';
+import projects from '../../data/projects.yaml';
 ---
 
-<BaseLayout title="Designbysoil – Work of Abdul Rehman Khawar">
+<BaseLayout title="Designbysoil – Information">
+  <FooterGallery projects={[projects.qf, projects.healthdesk, projects.credcat, projects.misinfodemia]} />
   <section class="section">
     <div class="grid-list">
       <h2 class="title">Experience</h2>

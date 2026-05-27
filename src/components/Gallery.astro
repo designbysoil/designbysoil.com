@@ -21,7 +21,9 @@ const [p1, p2, p3, p4] = projects;
             <defs>
               <mask id="fgal-mask-pink">
                 <rect width="450" height="360" fill="white"/>
-                <path fill="black" d="M 39 0 C 39 0 117 58 235 58 C 354 58 432 0 432 0 C 432 0 432 98 432 148 C 432 198 432 310 432 310 C 432 310 333 266 235 266 C 138 266 39 310 39 310 C 39 310 97 208 97 148 C 97 88 39 0 39 0 Z"/>
+                <g class="gal-ma gal-ma--pink">
+                  <path fill="black" d="M 39 0 C 39 0 117 58 235 58 C 354 58 432 0 432 0 C 432 0 432 98 432 148 C 432 198 432 310 432 310 C 432 310 333 266 235 266 C 138 266 39 310 39 310 C 39 310 97 208 97 148 C 97 88 39 0 39 0 Z"/>
+                </g>
               </mask>
             </defs>
             <rect width="450" height="360" fill="#ff4d7e" mask="url(#fgal-mask-pink)"/>
@@ -42,7 +44,9 @@ const [p1, p2, p3, p4] = projects;
             <defs>
               <mask id="fgal-mask-blue">
                 <rect width="787" height="520" fill="white"/>
-                <ellipse cx="490" cy="258" rx="218" ry="218" fill="black"/>
+                <g class="gal-ma gal-ma--blue">
+                  <ellipse cx="490" cy="258" rx="218" ry="218" fill="black"/>
+                </g>
                 <rect x="690" y="40" width="72" height="436" fill="black"/>
               </mask>
             </defs>
@@ -64,7 +68,9 @@ const [p1, p2, p3, p4] = projects;
             <defs>
               <mask id="fgal-mask-orange">
                 <rect width="338" height="240" fill="white"/>
-                <ellipse cx="169" cy="228" rx="157" ry="157" fill="black"/>
+                <g class="gal-ma gal-ma--orange">
+                  <ellipse cx="169" cy="228" rx="157" ry="157" fill="black"/>
+                </g>
                 <rect x="0" y="210" width="338" height="30" fill="white"/>
               </mask>
             </defs>
@@ -86,7 +92,9 @@ const [p1, p2, p3, p4] = projects;
             <defs>
               <mask id="fgal-mask-green">
                 <rect width="503" height="320" fill="white"/>
-                <polygon points="478,295 478,20.5 215,20.5" fill="black"/>
+                <g class="gal-ma gal-ma--green">
+                  <polygon points="478,295 478,20.5 215,20.5" fill="black"/>
+                </g>
               </mask>
             </defs>
             <rect width="503" height="320" fill="#008d5e" mask="url(#fgal-mask-green)"/>
@@ -106,7 +114,7 @@ const [p1, p2, p3, p4] = projects;
 
   .fgal__canvas {
     position: relative;
-    max-width: 1320px;
+    max-width: 1056px;
     margin: 0 auto;
     aspect-ratio: 1320 / 1102;
   }
@@ -122,6 +130,9 @@ const [p1, p2, p3, p4] = projects;
   .fgal__item {
     position: absolute;
     overflow: hidden;
+    display: block;
+    text-decoration: none;
+    border-bottom: none;
   }
 
   .fgal__item--pink {
@@ -222,12 +233,52 @@ const [p1, p2, p3, p4] = projects;
     to   { transform: scale(1.08) translate(-3%, -2%); }
   }
 
+  /* ── Mask shape animations ──────────────────── */
+
+  .gal-ma {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .gal-ma--pink   { animation: gal-ma-pink   4.3s ease-in-out infinite alternate; animation-delay: 0s;    }
+  .gal-ma--blue   { animation: gal-ma-blue   3.9s ease-in-out infinite alternate; animation-delay: -1.5s; }
+  .gal-ma--orange { animation: gal-ma-orange 4.7s ease-in-out infinite alternate; animation-delay: -0.8s; }
+  .gal-ma--green  { animation: gal-ma-green  5.1s ease-in-out infinite alternate; animation-delay: -2.1s; }
+
+  @keyframes gal-ma-pink {
+    from { transform: translate(0, 0)      rotate(0deg);  }
+    40%  { transform: translate(6px, -8px) rotate(2deg);  }
+    to   { transform: translate(-8px, 6px) rotate(-3deg); }
+  }
+
+  @keyframes gal-ma-blue {
+    from { transform: translate(0, 0);        }
+    45%  { transform: translate(-18px, 4px);  }
+    to   { transform: translate(20px, -8px);  }
+  }
+
+  @keyframes gal-ma-orange {
+    from { transform: translate(0, 0);        }
+    35%  { transform: translate(5px, -10px);  }
+    to   { transform: translate(-6px, -12px); }
+  }
+
+  @keyframes gal-ma-green {
+    from { transform: translate(0, 0)        rotate(0deg);    }
+    60%  { transform: translate(-10px, 8px)  rotate(-1.5deg); }
+    to   { transform: translate(12px, -10px) rotate(3deg);    }
+  }
+
   /* ── Reduced motion ──────────────────────────── */
 
   @media (prefers-reduced-motion: reduce) {
     .fgal__image-wrap img {
       animation: none !important;
       transform: scale(1.12) !important;
+    }
+    .gal-ma {
+      animation: none !important;
+      transform: none !important;
     }
   }
 

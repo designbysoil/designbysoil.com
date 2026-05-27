@@ -1,18 +1,13 @@
 ---
 interface Props {
-  client: string;
   toolkit: string;
 }
 
-const { client, toolkit } = Astro.props;
+const { toolkit } = Astro.props;
 ---
 
 <section class="section">
   <div class="block-grid">
-    <div class="project-meta">
-      <h2>Client</h2>
-      <div>{client}</div>
-    </div>
     <div class="project-meta">
       <h2>Toolkit</h2>
       <div>{toolkit}</div>

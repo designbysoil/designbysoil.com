@@ -12,98 +12,102 @@ const [p1, p2, p3, p4] = projects;
 <section class="fgal reveal">
   <div class="fgal__canvas">
 
-    <div class="fgal__cell fgal__cell--1">
-      <!-- Pink: rectangle with convex-pillow cutout -->
-      <a href={p1.page} class="fgal__item fgal__item--pink">
-        <div class="fgal__image-wrap">
-          <Image src={`${p1.thumbnail}?w=900&q=85&fl=progressive`} alt={p1.title} inferSize />
+    <div class="fgal__slot fgal__slot--1">
+      <div class="fgal__drift-layer fgal__drift-layer--1">
+        <div class="fgal__scale-wrap">
+          <a href={p1.page} class="fgal__item fgal__item--pink">
+            <div class="fgal__image-wrap">
+              <Image src={`${p1.thumbnail}?w=900&q=85&fl=progressive`} alt={p1.title} inferSize />
+            </div>
+            <div class="fgal__mask" aria-hidden="true">
+              <svg viewBox="0 0 450 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <mask id="fgal-mask-pink">
+                    <rect width="450" height="360" fill="white"/>
+                    <path fill="black" d="M 39 0 C 39 0 117 58 235 58 C 354 58 432 0 432 0 C 432 0 432 98 432 148 C 432 198 432 310 432 310 C 432 310 333 266 235 266 C 138 266 39 310 39 310 C 39 310 97 208 97 148 C 97 88 39 0 39 0 Z"/>
+                  </mask>
+                </defs>
+                <rect width="450" height="360" fill="#ff4d7e" mask="url(#fgal-mask-pink)"/>
+              </svg>
+            </div>
+          </a>
+          <p class="fgal__caption">{p1.title}</p>
         </div>
-        <div class="fgal__mask" aria-hidden="true">
-          <svg viewBox="0 0 450 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <mask id="fgal-mask-pink">
-                <rect width="450" height="360" fill="white"/>
-                <g class="gal-ma gal-ma--pink">
-                  <path fill="black" d="M 39 0 C 39 0 117 58 235 58 C 354 58 432 0 432 0 C 432 0 432 98 432 148 C 432 198 432 310 432 310 C 432 310 333 266 235 266 C 138 266 39 310 39 310 C 39 310 97 208 97 148 C 97 88 39 0 39 0 Z"/>
-                </g>
-              </mask>
-            </defs>
-            <rect width="450" height="360" fill="#ff4d7e" mask="url(#fgal-mask-pink)"/>
-          </svg>
-        </div>
-      </a>
-      <p class="fgal__caption fgal__caption--1">{p1.title}</p>
+      </div>
     </div>
 
-    <div class="fgal__cell fgal__cell--2">
-      <!-- Blue: rectangle with circle + vertical strip cutout -->
-      <a href={p2.page} class="fgal__item fgal__item--blue">
-        <div class="fgal__image-wrap">
-          <Image src={`${p2.thumbnail}?w=900&q=85&fl=progressive`} alt={p2.title} inferSize />
+    <div class="fgal__slot fgal__slot--2">
+      <div class="fgal__drift-layer fgal__drift-layer--2">
+        <div class="fgal__scale-wrap">
+          <a href={p2.page} class="fgal__item fgal__item--blue">
+            <div class="fgal__image-wrap">
+              <Image src={`${p2.thumbnail}?w=900&q=85&fl=progressive`} alt={p2.title} inferSize />
+            </div>
+            <div class="fgal__mask" aria-hidden="true">
+              <svg viewBox="0 0 787 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <mask id="fgal-mask-blue">
+                    <rect width="787" height="520" fill="white"/>
+                    <ellipse cx="490" cy="258" rx="218" ry="218" fill="black"/>
+                    <rect x="690" y="40" width="72" height="436" fill="black"/>
+                  </mask>
+                </defs>
+                <rect width="787" height="520" fill="#0557fa" mask="url(#fgal-mask-blue)"/>
+              </svg>
+            </div>
+          </a>
+          <p class="fgal__caption">{p2.title}</p>
         </div>
-        <div class="fgal__mask" aria-hidden="true">
-          <svg viewBox="0 0 787 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <mask id="fgal-mask-blue">
-                <rect width="787" height="520" fill="white"/>
-                <g class="gal-ma gal-ma--blue">
-                  <ellipse cx="490" cy="258" rx="218" ry="218" fill="black"/>
-                </g>
-                <rect x="690" y="40" width="72" height="436" fill="black"/>
-              </mask>
-            </defs>
-            <rect width="787" height="520" fill="#0557fa" mask="url(#fgal-mask-blue)"/>
-          </svg>
-        </div>
-      </a>
-      <p class="fgal__caption fgal__caption--2">{p2.title}</p>
+      </div>
     </div>
 
-    <div class="fgal__cell fgal__cell--3">
-      <!-- Orange: rectangle with arch (semicircle) cutout at bottom -->
-      <a href={p3.page} class="fgal__item fgal__item--orange">
-        <div class="fgal__image-wrap">
-          <Image src={`${p3.thumbnail}?w=900&q=85&fl=progressive`} alt={p3.title} inferSize />
+    <div class="fgal__slot fgal__slot--3">
+      <div class="fgal__drift-layer fgal__drift-layer--3">
+        <div class="fgal__scale-wrap">
+          <a href={p3.page} class="fgal__item fgal__item--orange">
+            <div class="fgal__image-wrap">
+              <Image src={`${p3.thumbnail}?w=900&q=85&fl=progressive`} alt={p3.title} inferSize />
+            </div>
+            <div class="fgal__mask" aria-hidden="true">
+              <svg viewBox="0 0 338 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <mask id="fgal-mask-orange">
+                    <rect width="338" height="240" fill="white"/>
+                    <ellipse cx="169" cy="228" rx="157" ry="157" fill="black"/>
+                    <rect x="0" y="210" width="338" height="30" fill="white"/>
+                  </mask>
+                </defs>
+                <rect width="338" height="240" fill="#ed9c31" mask="url(#fgal-mask-orange)"/>
+              </svg>
+            </div>
+          </a>
+          <p class="fgal__caption fgal__caption--right">{p3.title}</p>
         </div>
-        <div class="fgal__mask" aria-hidden="true">
-          <svg viewBox="0 0 338 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <mask id="fgal-mask-orange">
-                <rect width="338" height="240" fill="white"/>
-                <g class="gal-ma gal-ma--orange">
-                  <ellipse cx="169" cy="228" rx="157" ry="157" fill="black"/>
-                </g>
-                <rect x="0" y="210" width="338" height="30" fill="white"/>
-              </mask>
-            </defs>
-            <rect width="338" height="240" fill="#ed9c31" mask="url(#fgal-mask-orange)"/>
-          </svg>
-        </div>
-      </a>
-      <p class="fgal__caption fgal__caption--3">{p3.title}</p>
+      </div>
     </div>
 
-    <div class="fgal__cell fgal__cell--4">
-      <!-- Green: rectangle with triangle cutout revealing image -->
-      <a href={p4.page} class="fgal__item fgal__item--green">
-        <div class="fgal__image-wrap">
-          <Image src={`${p4.thumbnail}?w=900&q=85&fl=progressive`} alt={p4.title} inferSize />
+    <div class="fgal__slot fgal__slot--4">
+      <div class="fgal__drift-layer fgal__drift-layer--4">
+        <div class="fgal__scale-wrap">
+          <a href={p4.page} class="fgal__item fgal__item--green">
+            <div class="fgal__image-wrap">
+              <Image src={`${p4.thumbnail}?w=900&q=85&fl=progressive`} alt={p4.title} inferSize />
+            </div>
+            <div class="fgal__mask" aria-hidden="true">
+              <svg viewBox="0 0 503 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <mask id="fgal-mask-green">
+                    <rect width="503" height="320" fill="white"/>
+                    <polygon points="478,295 478,20.5 215,20.5" fill="black"/>
+                  </mask>
+                </defs>
+                <rect width="503" height="320" fill="#008d5e" mask="url(#fgal-mask-green)"/>
+              </svg>
+            </div>
+          </a>
+          <p class="fgal__caption">{p4.title}</p>
         </div>
-        <div class="fgal__mask" aria-hidden="true">
-          <svg viewBox="0 0 503 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <mask id="fgal-mask-green">
-                <rect width="503" height="320" fill="white"/>
-                <g class="gal-ma gal-ma--green">
-                  <polygon points="478,295 478,20.5 215,20.5" fill="black"/>
-                </g>
-              </mask>
-            </defs>
-            <rect width="503" height="320" fill="#008d5e" mask="url(#fgal-mask-green)"/>
-          </svg>
-        </div>
-      </a>
-      <p class="fgal__caption fgal__caption--4">{p4.title}</p>
+      </div>
     </div>
 
   </div>
@@ -121,51 +125,50 @@ const [p1, p2, p3, p4] = projects;
     aspect-ratio: 1320 / 1102;
   }
 
-  /* ── Cell wrappers (transparent on desktop, grid cells on mobile) ── */
+  /* ── Slots: position anchors ── */
 
-  .fgal__cell {
-    display: contents;
+  .fgal__slot {
+    position: absolute;
   }
 
-  /* ── Shape items ─────────────────────────────── */
+  /* Width only — height derives from the item's aspect-ratio in normal flow */
+  .fgal__slot--1 { left: 0.3%;  top: 14.5%; width: 34.1%; }
+  .fgal__slot--2 { left: 40.4%; top: 0;     width: 59.6%; }
+  .fgal__slot--3 { left: 14.7%; top: 62%;   width: 25.6%; }
+  .fgal__slot--4 { left: 47.1%; top: 65.6%; width: 38.1%; }
+
+  /* ── Drift layer: normal-flow block, transform only ── */
+
+  .fgal__drift-layer {
+    transform-origin: center center;
+  }
+
+  /* ── Scale wrap: contains item + caption, establishes stacking context ── */
+
+  .fgal__scale-wrap {
+    position: relative;
+    transform-origin: center center;
+    /* Start tiny; JS opens each item in load sequence */
+    transform: scale(0.07);
+  }
+
+  /* ── Item: in normal flow, sets its own height via aspect-ratio ── */
 
   .fgal__item {
-    position: absolute;
-    overflow: hidden;
+    position: relative;
+    width: 100%;
     display: block;
+    overflow: hidden;
     text-decoration: none;
     border-bottom: none;
   }
 
-  .fgal__item--pink {
-    left: 0.3%;
-    top: 14.5%;
-    width: 34.1%;
-    aspect-ratio: 450 / 360;
-  }
+  .fgal__item--pink   { aspect-ratio: 450 / 360; }
+  .fgal__item--blue   { aspect-ratio: 787 / 520; }
+  .fgal__item--orange { aspect-ratio: 338 / 240; }
+  .fgal__item--green  { aspect-ratio: 503 / 320; }
 
-  .fgal__item--blue {
-    right: 0;
-    top: 0;
-    width: 59.6%;
-    aspect-ratio: 787 / 520;
-  }
-
-  .fgal__item--orange {
-    left: 14.7%;
-    top: 62%;
-    width: 25.6%;
-    aspect-ratio: 338 / 240;
-  }
-
-  .fgal__item--green {
-    left: 47.1%;
-    top: 65.6%;
-    width: 38.1%;
-    aspect-ratio: 503 / 320;
-  }
-
-  /* ── Image layer ─────────────────────────────── */
+  /* ── Image layer ── */
 
   .fgal__image-wrap {
     position: absolute;
@@ -180,7 +183,7 @@ const [p1, p2, p3, p4] = projects;
     transform-origin: center;
   }
 
-  /* ── Mask layer ──────────────────────────────── */
+  /* ── Mask layer ── */
 
   .fgal__mask {
     position: absolute;
@@ -195,23 +198,77 @@ const [p1, p2, p3, p4] = projects;
     display: block;
   }
 
-  /* ── Captions ────────────────────────────────── */
+  /* ── Captions: below item, inside scale-wrap ── */
 
   .fgal__caption {
     position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
     margin: 0;
+    padding-top: 6px;
     font-size: clamp(10px, 1.38vw, 18px);
     line-height: 1.1;
     color: #EFF0EC;
   }
 
-  .fgal__caption--1 { left: 0.3%;  width: 34.1%; top: 49%;  }
-  .fgal__caption--2 { left: 40.5%; width: 59.5%; top: 49%;  }
-  .fgal__caption--3 { left: 14.7%; width: 25.6%; top: 86%; text-align: right; }
-  .fgal__caption--4 { left: 47.1%; width: 38.1%; top: 96%;  }
+  .fgal__caption--right {
+    text-align: right;
+  }
 
+  /* ── Drift animations (start paused; JS resumes after load) ── */
 
-  /* ── Responsive ──────────────────────────────── */
+  .fgal__drift-layer--1 {
+    animation: drift-1 4.3s ease-in-out infinite alternate -0.7s;
+    animation-play-state: paused;
+  }
+  .fgal__drift-layer--2 {
+    animation: drift-2 5.1s ease-in-out infinite alternate -1.9s;
+    animation-play-state: paused;
+  }
+  .fgal__drift-layer--3 {
+    animation: drift-3 4.7s ease-in-out infinite alternate -2.8s;
+    animation-play-state: paused;
+  }
+  .fgal__drift-layer--4 {
+    animation: drift-4 3.9s ease-in-out infinite alternate -1.1s;
+    animation-play-state: paused;
+  }
+
+  @keyframes drift-1 {
+    from { transform: translate(0, 0); }
+    40%  { transform: translate(8px, -10px); }
+    to   { transform: translate(13px, -5px); }
+  }
+  @keyframes drift-2 {
+    from { transform: translate(0, 0); }
+    55%  { transform: translate(-14px, 6px); }
+    to   { transform: translate(-9px, 12px); }
+  }
+  @keyframes drift-3 {
+    from { transform: translate(0, 0); }
+    35%  { transform: translate(10px, -8px); }
+    to   { transform: translate(6px, -13px); }
+  }
+  @keyframes drift-4 {
+    from { transform: translate(0, 0); }
+    60%  { transform: translate(-11px, -5px); }
+    to   { transform: translate(-15px, -9px); }
+  }
+
+  /* ── Reduced motion ── */
+
+  @media (prefers-reduced-motion: reduce) {
+    .fgal__scale-wrap {
+      transform: scale(1) !important;
+      transition: none !important;
+    }
+    .fgal__drift-layer {
+      animation: none !important;
+    }
+  }
+
+  /* ── Responsive ── */
 
   @media screen and (max-width: 767px) {
     .fgal {
@@ -219,3 +276,113 @@ const [p1, p2, p3, p4] = projects;
     }
   }
 </style>
+
+<script>
+  (() => {
+    const canvas = document.querySelector<HTMLElement>('.fgal__canvas');
+    if (!canvas) return;
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      canvas.querySelectorAll<HTMLElement>('.fgal__scale-wrap').forEach(sw => {
+        sw.style.transition = 'none';
+        sw.style.transform  = 'scale(1)';
+      });
+      return;
+    }
+
+    const slots  = Array.from(canvas.querySelectorAll<HTMLElement>('.fgal__slot'));
+    const drifts = Array.from(canvas.querySelectorAll<HTMLElement>('.fgal__drift-layer'));
+    const wraps  = Array.from(canvas.querySelectorAll<HTMLElement>('.fgal__scale-wrap'));
+
+    type Pos = { left: string; top: string };
+
+    // Home positions (match CSS .fgal__slot--N) — Original state from Figma
+    const HOME: Pos[] = [
+      { left: '0.3%',   top: '14.52%' },  // i1 pink  — top-left
+      { left: '40.38%', top: '0%'     },  // i2 blue  — top-right
+      { left: '14.7%',  top: '61.98%' },  // i3 orange — bottom-left
+      { left: '47.12%', top: '65.61%' },  // i4 green  — bottom-right
+    ];
+
+    // Swap 1: i2+i3 trade — from Figma node 531:279
+    const SWAP1: Pos[] = [
+      { left: '0%',     top: '47.46%' },  // i2 blue   → bottom-left
+      { left: '63.18%', top: '12.70%' },  // i3 orange → top-right
+    ];
+
+    // Swap 2: i1+i4 trade — from Figma node 531:297
+    const SWAP2: Pos[] = [
+      { left: '66.06%', top: '45.37%' },  // i1 pink  → bottom-right
+      { left: '15.30%', top: '0%'     },  // i4 green → top-left
+    ];
+
+    const HOLD_MS    = 16000;
+    const CLOSE_MS   = 350;
+    const OPEN_MS    = 500;
+    const STAGGER_MS = 200;
+
+    const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
+
+    function setPos(slotEl: HTMLElement, p: Pos) {
+      slotEl.style.left  = p.left;
+      slotEl.style.top   = p.top;
+      slotEl.style.right = '';
+    }
+
+    function openWrap(el: HTMLElement) {
+      el.style.transition = `transform ${OPEN_MS}ms cubic-bezier(0.22, 0, 0, 1)`;
+      el.style.transform  = 'scale(1)';
+    }
+
+    function closeWrap(el: HTMLElement) {
+      el.style.transition = `transform ${CLOSE_MS}ms ease-in`;
+      el.style.transform  = 'scale(0.07)';
+    }
+
+    async function movePair(a: number, b: number, posA: Pos, posB: Pos) {
+      drifts[a].style.animationPlayState = 'paused';
+      drifts[b].style.animationPlayState = 'paused';
+
+      closeWrap(wraps[a]);
+      closeWrap(wraps[b]);
+      await sleep(CLOSE_MS);
+
+      setPos(slots[a], posA);
+      setPos(slots[b], posB);
+
+      openWrap(wraps[a]);
+      openWrap(wraps[b]);
+      await sleep(OPEN_MS);
+
+      drifts[a].style.animationPlayState = 'running';
+      drifts[b].style.animationPlayState = 'running';
+    }
+
+    async function run() {
+      // Load: i1(0) → i4(3) → i2(1) → i3(2), staggered
+      for (const idx of [0, 3, 1, 2]) {
+        openWrap(wraps[idx]);
+        await sleep(STAGGER_MS);
+      }
+      await sleep(OPEN_MS); // wait for last item to finish opening
+
+      // Start drift on all
+      drifts.forEach(d => { d.style.animationPlayState = 'running'; });
+
+      // Original → Swap1 → Swap2 → Swap1 → Original → repeat
+      // Each state holds 16s; pair 2 (i2+i3) moves first, then pair 1 (i1+i4)
+      while (true) {
+        await sleep(HOLD_MS);                                  // hold Original
+        await movePair(1, 2, SWAP1[0], SWAP1[1]);             // → Swap 1: i2→BL, i3→TR
+        await sleep(HOLD_MS);                                  // hold Swap 1
+        await movePair(0, 3, SWAP2[0], SWAP2[1]);             // → Swap 2: i1→BR, i4→TL
+        await sleep(HOLD_MS);                                  // hold Swap 2
+        await movePair(0, 3, HOME[0], HOME[3]);               // ← back to Swap 1 (i1+i4 home)
+        await sleep(HOLD_MS);                                  // hold Swap 1
+        await movePair(1, 2, HOME[1], HOME[2]);               // ← back to Original
+      }
+    }
+
+    run();
+  })();
+</script>

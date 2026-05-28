@@ -304,20 +304,12 @@ const [p1, p2, p3, p4] = projects;
       { left: '47.12%', top: '61.43%' },  // i4 green
     ];
 
-    // Swap 1 — all 4 cards; row gap ~107px, col gap ~62px
-    const SWAP1: Pos[] = [
-      { left: '19.39%', top: '2.54%'  },  // i1 pink
-      { left: '0%',     top: '46.73%' },  // i2 blue
-      { left: '64.32%', top: '15.25%' },  // i3 orange
-      { left: '64.62%', top: '50.36%' },  // i4 green
-    ];
-
-    // Swap 2 — all 4 cards; blue+pink top-edge aligned
-    const SWAP2: Pos[] = [
-      { left: '64.62%', top: '46.73%' },  // i1 pink
-      { left: '0%',     top: '46.73%' },  // i2 blue
-      { left: '64.32%', top: '15.25%' },  // i3 orange
-      { left: '15.38%', top: '6.17%'  },  // i4 green
+    // i2 ↔ i3 swap — all 4 move (Figma Group 69) to avoid blue card overlapping i4
+    const SWAP_23: Pos[] = [
+      { left: '19.39%', top: '0%'     },  // i1 pink
+      { left: '0%',     top: '47.46%' },  // i2 blue
+      { left: '65.91%', top: '12.70%' },  // i3 orange
+      { left: '66.21%', top: '51.09%' },  // i4 green
     ];
 
     const HOLD_MS    = 16000;
@@ -365,16 +357,15 @@ const [p1, p2, p3, p4] = projects;
 
       drifts.forEach(d => { d.style.animationPlayState = 'running'; });
 
-      // All 4 cards move on every transition — exact Figma positions.
       while (true) {
         await sleep(HOLD_MS);
-        await moveItems([0, 1, 2, 3], SWAP1);   // → Swap1
+        await moveItems([0, 1, 2, 3], SWAP_23);              // i2 ↔ i3 (all 4 move)
         await sleep(HOLD_MS);
-        await moveItems([0, 1, 2, 3], SWAP2);   // → Swap2
+        await moveItems([0, 1, 2, 3], HOME);                  // back to home
         await sleep(HOLD_MS);
-        await moveItems([0, 1, 2, 3], SWAP1);   // ← back to Swap1
+        await moveItems([0, 3], [HOME[3], HOME[0]]);          // i1 ↔ i4
         await sleep(HOLD_MS);
-        await moveItems([0, 1, 2, 3], HOME);    // ← back to Original
+        await moveItems([0, 3], [HOME[0], HOME[3]]);          // i1 ↔ i4 back
       }
     }
 

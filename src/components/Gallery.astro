@@ -132,10 +132,10 @@ const [p1, p2, p3, p4] = projects;
   }
 
   /* Width only — height derives from the item's aspect-ratio in normal flow */
-  .fgal__slot--1 { left: 0.3%;  top: 14.5%; width: 34.1%; }
-  .fgal__slot--2 { left: 40.4%; top: 0;     width: 59.6%; }
-  .fgal__slot--3 { left: 14.7%; top: 62%;   width: 25.6%; }
-  .fgal__slot--4 { left: 47.1%; top: 65.6%; width: 38.1%; }
+  .fgal__slot--1 { left: 0.3%;  top: 14.5%;  width: 34.1%; }
+  .fgal__slot--2 { left: 40.4%; top: 0;      width: 59.6%; }
+  .fgal__slot--3 { left: 14.7%; top: 57.80%; width: 25.6%; }
+  .fgal__slot--4 { left: 47.1%; top: 61.43%; width: 38.1%; }
 
   /* ── Drift layer: normal-flow block, transform only ── */
 
@@ -296,24 +296,28 @@ const [p1, p2, p3, p4] = projects;
 
     type Pos = { left: string; top: string };
 
-    // Home positions (match CSS .fgal__slot--N) — Original state from Figma
+    // Home positions (match CSS .fgal__slot--N)
     const HOME: Pos[] = [
-      { left: '0.3%',   top: '14.52%' },  // i1 pink  — top-left
-      { left: '40.38%', top: '0%'     },  // i2 blue  — top-right
-      { left: '14.7%',  top: '61.98%' },  // i3 orange — bottom-left
-      { left: '47.12%', top: '65.61%' },  // i4 green  — bottom-right
+      { left: '0.3%',   top: '14.52%' },  // i1 pink
+      { left: '40.38%', top: '0%'     },  // i2 blue
+      { left: '14.7%',  top: '57.80%' },  // i3 orange
+      { left: '47.12%', top: '61.43%' },  // i4 green
     ];
 
-    // Swap 1: i2+i3 trade — from Figma node 531:279
+    // Swap 1 — all 4 cards; row gap ~107px, col gap ~62px
     const SWAP1: Pos[] = [
-      { left: '0%',     top: '47.46%' },  // i2 blue   → bottom-left
-      { left: '63.18%', top: '12.70%' },  // i3 orange → top-right
+      { left: '19.39%', top: '2.54%'  },  // i1 pink
+      { left: '0%',     top: '46.73%' },  // i2 blue
+      { left: '64.32%', top: '15.25%' },  // i3 orange
+      { left: '64.62%', top: '50.36%' },  // i4 green
     ];
 
-    // Swap 2: i1+i4 trade — from Figma node 531:297
+    // Swap 2 — all 4 cards; blue+pink top-edge aligned
     const SWAP2: Pos[] = [
-      { left: '66.06%', top: '45.37%' },  // i1 pink  → bottom-right
-      { left: '15.30%', top: '0%'     },  // i4 green → top-left
+      { left: '64.62%', top: '46.73%' },  // i1 pink
+      { left: '0%',     top: '46.73%' },  // i2 blue
+      { left: '64.32%', top: '15.25%' },  // i3 orange
+      { left: '15.38%', top: '6.17%'  },  // i4 green
     ];
 
     const HOLD_MS    = 16000;
@@ -339,23 +343,16 @@ const [p1, p2, p3, p4] = projects;
       el.style.transform  = 'scale(0.07)';
     }
 
-    async function movePair(a: number, b: number, posA: Pos, posB: Pos) {
-      drifts[a].style.animationPlayState = 'paused';
-      drifts[b].style.animationPlayState = 'paused';
-
-      closeWrap(wraps[a]);
-      closeWrap(wraps[b]);
+    async function moveItems(indices: number[], positions: Pos[]) {
+      indices.forEach(i => {
+        drifts[i].style.animationPlayState = 'paused';
+        closeWrap(wraps[i]);
+      });
       await sleep(CLOSE_MS);
-
-      setPos(slots[a], posA);
-      setPos(slots[b], posB);
-
-      openWrap(wraps[a]);
-      openWrap(wraps[b]);
+      indices.forEach((i, j) => setPos(slots[i], positions[j]));
+      indices.forEach(i => openWrap(wraps[i]));
       await sleep(OPEN_MS);
-
-      drifts[a].style.animationPlayState = 'running';
-      drifts[b].style.animationPlayState = 'running';
+      indices.forEach(i => { drifts[i].style.animationPlayState = 'running'; });
     }
 
     async function run() {
@@ -364,22 +361,20 @@ const [p1, p2, p3, p4] = projects;
         openWrap(wraps[idx]);
         await sleep(STAGGER_MS);
       }
-      await sleep(OPEN_MS); // wait for last item to finish opening
+      await sleep(OPEN_MS);
 
-      // Start drift on all
       drifts.forEach(d => { d.style.animationPlayState = 'running'; });
 
-      // Original → Swap1 → Swap2 → Swap1 → Original → repeat
-      // Each state holds 16s; pair 2 (i2+i3) moves first, then pair 1 (i1+i4)
+      // All 4 cards move on every transition — exact Figma positions.
       while (true) {
-        await sleep(HOLD_MS);                                  // hold Original
-        await movePair(1, 2, SWAP1[0], SWAP1[1]);             // → Swap 1: i2→BL, i3→TR
-        await sleep(HOLD_MS);                                  // hold Swap 1
-        await movePair(0, 3, SWAP2[0], SWAP2[1]);             // → Swap 2: i1→BR, i4→TL
-        await sleep(HOLD_MS);                                  // hold Swap 2
-        await movePair(0, 3, HOME[0], HOME[3]);               // ← back to Swap 1 (i1+i4 home)
-        await sleep(HOLD_MS);                                  // hold Swap 1
-        await movePair(1, 2, HOME[1], HOME[2]);               // ← back to Original
+        await sleep(HOLD_MS);
+        await moveItems([0, 1, 2, 3], SWAP1);   // → Swap1
+        await sleep(HOLD_MS);
+        await moveItems([0, 1, 2, 3], SWAP2);   // → Swap2
+        await sleep(HOLD_MS);
+        await moveItems([0, 1, 2, 3], SWAP1);   // ← back to Swap1
+        await sleep(HOLD_MS);
+        await moveItems([0, 1, 2, 3], HOME);    // ← back to Original
       }
     }
 

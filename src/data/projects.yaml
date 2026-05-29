@@ -60,6 +60,7 @@ misinfodemia:
   color: '#FFDDED'
   hero: 'https://images.ctfassets.net/2orm8gd3ce6v/2DaiOGtOi4mcoo56IN8pQS/83177968a5efb9f661860e3c8c82d8a8/misinfodemia-hero.png'
   thumbnail: 'https://images.ctfassets.net/2orm8gd3ce6v/7p7sBcm7d9ZwoGP9uLr60e/a14d98129bbb178df25a3c946b05820b/misinfodemia-podcast-phone-ep1.jpg'
+  gallerySrc: 'https://images.ctfassets.net/2orm8gd3ce6v/7lz4lnIfyn9LU5YijRPgaW/31ca7e61b1ded5c9fcf2c56569af88b1/misinfodemia-ep-2.png'
   crop: 'center'
   page: '/project/misinfodemia'
   client: 'Meedan'

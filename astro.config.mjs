@@ -9,6 +9,9 @@ export default defineConfig({
   integrations: [
     sitemap(),
   ],
+  image: {
+    domains: ['images.ctfassets.net'],
+  },
   vite: {
     plugins: [yaml()],
   },

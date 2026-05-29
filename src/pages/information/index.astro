@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Gallery from '../../components/Gallery.astro';
+import projects from '../../data/projects.yaml';
 ---
 
-<BaseLayout title="Designbysoil – Work of Abdul Rehman Khawar">
+<BaseLayout title="Designbysoil – Information">
+  <Gallery projects={[projects.qf, projects.credcat, projects.healthdesk, projects.misinfodemia]} />
   <section class="section">
     <div class="grid-list">
       <h2 class="title">Experience</h2>

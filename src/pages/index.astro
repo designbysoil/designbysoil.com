@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import AvailabilityMarquee from '../components/AvailabilityMarquee.astro';
-import FooterGallery from '../components/FooterGallery.astro';
+import { Image } from 'astro:assets';
 import projects from '../data/projects.yaml';
 ---
 
@@ -28,7 +28,7 @@ import projects from '../data/projects.yaml';
         <a href={project.page}>
           {project.title}
           <div class="media">
-            <img src={project.thumbnail} />
+            <Image src={`${project.thumbnail}?w=800&q=85&fl=progressive`} alt={project.title} inferSize />
           </div>
           <div class="toolkit small">
             {project.toolkit}
@@ -37,6 +37,4 @@ import projects from '../data/projects.yaml';
       ))}
     </div>
   </section>
-
-  <FooterGallery projects={[projects.qf, projects.healthdesk, projects.credcat, projects.misinfodemia]} />
 </BaseLayout>

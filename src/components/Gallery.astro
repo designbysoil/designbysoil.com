@@ -1,12 +1,13 @@
 ---
-import { Image } from 'astro:assets';
-
 interface Props {
   projects: any[];
 }
 
 const { projects } = Astro.props;
 const [p1, p2, p3, p4] = projects;
+
+const imgSrc = (url: string) =>
+  url.startsWith('http') ? `${url}?w=900&q=85&fl=progressive` : url;
 ---
 
 <section class="fgal reveal">
@@ -17,7 +18,7 @@ const [p1, p2, p3, p4] = projects;
         <div class="fgal__scale-wrap">
           <a href={p1.page} class="fgal__item fgal__item--pink">
             <div class="fgal__image-wrap">
-              <Image src={`${p1.gallerySrc ?? p1.thumbnail}?w=900&q=85&fl=progressive`} alt={p1.title} inferSize />
+              <img src={imgSrc(p1.gallerySrc ?? p1.thumbnail)} alt={p1.title} loading="lazy" decoding="async" />
             </div>
             <div class="fgal__mask" aria-hidden="true">
               <svg viewBox="0 0 450 360" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +42,7 @@ const [p1, p2, p3, p4] = projects;
         <div class="fgal__scale-wrap">
           <a href={p2.page} class="fgal__item fgal__item--blue">
             <div class="fgal__image-wrap">
-              <Image src={`${p2.gallerySrc ?? p2.thumbnail}?w=900&q=85&fl=progressive`} alt={p2.title} inferSize />
+              <img src={imgSrc(p2.gallerySrc ?? p2.thumbnail)} alt={p2.title} loading="lazy" decoding="async" />
             </div>
             <div class="fgal__mask" aria-hidden="true">
               <svg viewBox="0 0 787 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +67,7 @@ const [p1, p2, p3, p4] = projects;
         <div class="fgal__scale-wrap">
           <a href={p3.page} class="fgal__item fgal__item--orange">
             <div class="fgal__image-wrap">
-              <Image src={`${p3.gallerySrc ?? p3.thumbnail}?w=900&q=85&fl=progressive`} alt={p3.title} inferSize />
+              <img src={imgSrc(p3.gallerySrc ?? p3.thumbnail)} alt={p3.title} loading="lazy" decoding="async" />
             </div>
             <div class="fgal__mask" aria-hidden="true">
               <svg viewBox="0 0 338 240" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +92,7 @@ const [p1, p2, p3, p4] = projects;
         <div class="fgal__scale-wrap">
           <a href={p4.page} class="fgal__item fgal__item--green">
             <div class="fgal__image-wrap">
-              <Image src={`${p4.gallerySrc ?? p4.thumbnail}?w=900&q=85&fl=progressive`} alt={p4.title} inferSize />
+              <img src={imgSrc(p4.gallerySrc ?? p4.thumbnail)} alt={p4.title} loading="lazy" decoding="async" />
             </div>
             <div class="fgal__mask" aria-hidden="true">
               <svg viewBox="0 0 503 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -186,9 +187,7 @@ const [p1, p2, p3, p4] = projects;
   /* Per-slot image positioning */
   .fgal__slot--2 .fgal__image-wrap img { object-position: 60% 15%; }
   .fgal__slot--4 .fgal__image-wrap img {
-    object-position: center 65%;
-    transform: scale(1.6) translateX(5%) translateY(30%);
-    transform-origin: center center;
+    object-position: center center;
   }
 
   /* ── Mask layer ── */
@@ -214,7 +213,7 @@ const [p1, p2, p3, p4] = projects;
     left: 0;
     width: 100%;
     margin: 0;
-    padding-top: 6px;
+    padding-top: 14px;
     font-size: clamp(10px, 1.38vw, 18px);
     line-height: 1.1;
     color: #EFF0EC;

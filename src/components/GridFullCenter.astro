@@ -1,5 +1,6 @@
 ---
 import BlurImage from './BlurImage.astro';
+import { cdnUrl, cdnSrcset } from '../utils/contentfulImage';
 
 interface Props {
   fullImageUrl: string;
@@ -21,15 +22,15 @@ const darkStyle = [
   <div class="block-grid">
     <div class="block-image">
       <BlurImage
-        src={fullImageUrl}
+        src={cdnUrl(fullImageUrl, { w: 645 })}
         sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 44vw"
-        srcset={`${fullImageUrl}?fl=progressive&q=90&w=500 500w, ${fullImageUrl} 645w`}
+        srcset={cdnSrcset(fullImageUrl, [500, 645])}
         class="image"
       />
     </div>
     <div class="block-image dark" style={darkStyle || undefined}>
       <div class="black-image-center">
-        <BlurImage src={centerImageUrl} />
+        <BlurImage src={cdnUrl(centerImageUrl, { w: 800 })} srcset={cdnSrcset(centerImageUrl, [400, 800])} sizes="(max-width: 767px) 80vw, 40vw" />
       </div>
     </div>
   </div>

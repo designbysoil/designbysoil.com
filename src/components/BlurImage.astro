@@ -8,9 +8,10 @@ interface Props {
   alt?: string;
   class?: string;
   loading?: 'lazy' | 'eager';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
-const { src, srcset, sizes, alt = '', loading = 'lazy', class: className } = Astro.props;
+const { src, srcset, sizes, alt = '', loading = 'lazy', fetchpriority, class: className } = Astro.props;
 const placeholder = await getPlaceholder(src);
 ---
 
@@ -25,6 +26,8 @@ const placeholder = await getPlaceholder(src);
     sizes={sizes}
     alt={alt}
     loading={loading}
+    fetchpriority={fetchpriority}
+    decoding="async"
   />
 </div>
 

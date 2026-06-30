@@ -1,4 +1,6 @@
 ---
+import { cdnUrl, cdnSrcset } from '../utils/contentfulImage';
+
 interface Props {
   slides: { image: string }[];
   imageClass?: string;
@@ -17,11 +19,12 @@ const { slides, imageClass } = Astro.props;
           role="group"
         >
           <img
-            src={slide.image}
+            src={cdnUrl(slide.image, { w: 1080 })}
             sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, 91vw"
-            srcset={`${slide.image}?fl=progressive&q=90&w=500 500w, ${slide.image}?fl=progressive&q=90&w=800 800w, ${slide.image}?fl=progressive&q=90&w=1080 1080w, ${slide.image} 1318w`}
+            srcset={cdnSrcset(slide.image, [500, 800, 1080, 1318])}
             alt=""
             loading="lazy"
+            decoding="async"
             class={imageClass}
           />
         </div>

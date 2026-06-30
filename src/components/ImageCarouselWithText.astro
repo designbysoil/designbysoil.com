@@ -1,4 +1,6 @@
 ---
+import { cdnUrl, cdnSrcset } from '../utils/contentfulImage';
+
 interface Props {
   slides: { image: string }[];
   heading?: string;
@@ -43,10 +45,11 @@ const { slides, heading, description, details, border = false, perPage = 3 } = A
             >
               <img
                 sizes="(max-width: 479px) 100vw, (max-width: 767px) 50vw, 33vw"
-                srcset={`${slide.image}?fl=progressive&q=90&w=500 500w, ${slide.image}?fl=progressive&q=90&w=800 800w, ${slide.image}?fl=progressive&q=90&w=1080 1080w, ${slide.image}?fl=progressive&q=90&w=1600 1600w`}
-                src={`${slide.image}?fl=progressive`}
+                srcset={cdnSrcset(slide.image, [500, 800, 1080, 1600])}
+                src={cdnUrl(slide.image, { w: 800 })}
                 alt=""
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
@@ -58,10 +61,11 @@ const { slides, heading, description, details, border = false, perPage = 3 } = A
             >
               <img
                 sizes="(max-width: 479px) 100vw, (max-width: 767px) 50vw, 33vw"
-                srcset={`${slide.image}?fl=progressive&q=90&w=500 500w, ${slide.image}?fl=progressive&q=90&w=800 800w, ${slide.image}?fl=progressive&q=90&w=1080 1080w, ${slide.image}?fl=progressive&q=90&w=1600 1600w`}
-                src={`${slide.image}?fl=progressive`}
+                srcset={cdnSrcset(slide.image, [500, 800, 1080, 1600])}
+                src={cdnUrl(slide.image, { w: 800 })}
                 alt=""
                 loading="lazy"
+                decoding="async"
               />
             </div>
           ))}

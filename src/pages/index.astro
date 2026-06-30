@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroArt from '../components/HeroArt.astro';
 import AvailabilityMarquee from '../components/AvailabilityMarquee.astro';
-import { Image } from 'astro:assets';
+import { cdnUrl, cdnSrcset } from '../utils/contentfulImage';
 import projects from '../data/projects.yaml';
 ---
 
@@ -28,7 +28,14 @@ import projects from '../data/projects.yaml';
         <a href={project.page}>
           {project.title}
           <div class="media">
-            <Image src={`${project.thumbnail}?w=800&q=85&fl=progressive`} alt={project.title} inferSize />
+            <img
+              src={cdnUrl(project.thumbnail, { w: 600, q: 85 })}
+              srcset={cdnSrcset(project.thumbnail, [300, 600, 900], { q: 85 })}
+              sizes="300px"
+              alt={project.title}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="toolkit small">
             {project.toolkit}

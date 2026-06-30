@@ -1,5 +1,6 @@
 ---
 import BlurImage from './BlurImage.astro';
+import { cdnUrl, cdnSrcset } from '../utils/contentfulImage';
 
 interface Props {
   imageUrl: string;
@@ -14,9 +15,9 @@ const { imageUrl, align, imageClass } = Astro.props;
   <div class="block-image dark">
     <div class:list={["block-image-inner", { "padding-bottom--0": align === "bottom" }]}>
       <BlurImage
-        src={imageUrl}
+        src={cdnUrl(imageUrl, { w: 1080 })}
         sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 92vw, (max-width: 1403px) 78vw, 1095px"
-        srcset={`${imageUrl}?fl=progressive&q=90&w=500 500w, ${imageUrl}?fl=progressive&q=90&w=800 800w, ${imageUrl}?fl=progressive&q=90&w=1080 1080w, ${imageUrl} 1095w`}
+        srcset={cdnSrcset(imageUrl, [500, 800, 1080, 1095])}
         class={imageClass}
       />
     </div>
